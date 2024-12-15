@@ -1,4 +1,4 @@
-import "@/styles/loader.css";
+import "../styles/loader.css";
 import Loader from "@/components/layout/Loader";
 
 export default function Loading() {

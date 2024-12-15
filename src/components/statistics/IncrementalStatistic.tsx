@@ -42,8 +42,7 @@ export default function IncrementalStatistic({ total, title }: Props) {
       );
       setCounter((c) => c + 1);
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [counter]);
+  }, [counter, total]);
 
   return (
     <div className="flex items-center gap-2">

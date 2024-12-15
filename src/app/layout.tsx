@@ -1,5 +1,5 @@
-import "@/styles/_globals.css";
-import "@/fonts/fa/css/all.min.css";
+import "../styles/_globals.css";
+import "../fonts/fa/css/all.min.css";
 import React from "react";
 import { Metadata } from "next";
 import localFont from "next/font/local";
@@ -11,14 +11,14 @@ const robotoMono = localFont({
   src: "../fonts/RobotoMono.woff2",
   variable: "--font-roboto-mono",
   display: "swap",
-  preload: true,
+  preload: false,
 });
 
 const sairaStencilOne = localFont({
   src: "../fonts/SairaStencilOne.woff2",
   variable: "--font-saira-stencil-one",
   display: "swap",
-  preload: true,
+  preload: false,
 });
 
 export const metadata: Metadata = {

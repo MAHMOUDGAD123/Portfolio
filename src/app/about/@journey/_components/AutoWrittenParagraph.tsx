@@ -29,8 +29,7 @@ export default function AutoWrittenParagraph({ paragraph, links }: Props) {
     // [2] split the (paragraph) into chars
     splittedParagraph.current = paragraph.split("");
     setIsWriting(true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isDone, paragraph]);
 
   useEffect(() => {
     if (isDone || !isWriting) return;
@@ -62,8 +61,15 @@ export default function AutoWrittenParagraph({ paragraph, links }: Props) {
       updateNodes(node);
       updateLastIndex(index + indexPlus);
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isWriting, index]);
+  }, [
+    isWriting,
+    index,
+    isDone,
+    paragraph,
+    updateDone,
+    updateLastIndex,
+    updateNodes,
+  ]);
 
   return (
     <p className="text-[--sec-txt-col]">

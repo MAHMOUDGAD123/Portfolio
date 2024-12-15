@@ -1,5 +1,5 @@
 "use client";
-import "@/styles/animatedTextList.css";
+import "../../styles/animatedTextList.css";
 import { useEffect, useRef } from "react";
 
 interface Props {
@@ -38,8 +38,7 @@ export default function AnimatedTextList({ textList, duration }: Props) {
 
     // show text
     ele.style.setProperty("--show", "inline-block");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [duration, textList.length]);
 
   return (
     <div
