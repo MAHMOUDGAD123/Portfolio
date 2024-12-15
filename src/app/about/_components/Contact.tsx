@@ -26,7 +26,7 @@ const contact: ContactType[] = [
 
 export default async function Contact() {
   return (
-    <div className="flex flex-col gap-[30px] max-_md:gap-[40px]">
+    <div className="flex flex-wrap gap-[30px] max-_xl:flex-col max-_md:gap-[40px]">
       {contact.map(({ iconClass, title, info, split }) => (
         <div
           key={title}
