@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --drk-bg-col: #0a0a0a;
+  --lit-bg-col: #ffffff;
+
+  --drk-txt-col: #ededed;
+  --lit-txt-col: #171717;
+  --sec-txt-col: #999;
+
+  --prm-col-1: dodgerblue;
+  --prm-col-2: rgb(30 144 255 / 0.5);
+  --sec-col-1: #686868;
+
+  --paragraph-text-opacity: 0.7;
+
+  --header-height: 90px;
+  --main-height: calc(100dvh - var(--header-height));
+  --trans-dur: 300ms;
+
+  --text-col: light-dark(var(--lit-txt-col), var(--drk-txt-col));
+  --bg-col: light-dark(var(--lit-bg-col), var(--drk-bg-col));
+
+  background-color: var(--bg-col);
+  color: var(--text-col);
+
+  scroll-behavior: smooth;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark light;
+  font-family: var(--font-roboto-mono), monospace;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  scrollbar-width: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  &::selection {
+    background-color: var(--prm-col-1);
+    color: #fff;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-size: 17px;
+  border-radius: 100px;
+  padding: 7px 15px;
+  border: 3px solid var(--prm-col-1);
+  transition-property: color, background-color;
+  transition-duration: var(--trans-dur);
+  color: var(--prm-col-1);
+  user-select: none;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: var(--prm-col-1);
+    color: var(--drk-txt-col);
+  }
+}
+
+/* Animaiton Keyframes Start */
+@keyframes spin-clockwise {
+  from {
+    rotate: z 0;
+  }
+  to {
+    rotate: z 1turn;
+  }
+}
+
+@keyframes spin-anticlockwise {
+  from {
+    rotate: z 0;
+  }
+  to {
+    rotate: z -1turn;
+  }
+}
+
+@keyframes fill-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: auto;
+  }
+}
+
+@keyframes half-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50%;
+  }
+}
+
+@keyframes full-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes settle-left {
+  from {
+    translate: -25px 0;
+  }
+  to {
+    translate: none;
+  }
+}
+
+@keyframes settle-right {
+  from {
+    translate: 25px 0;
+  }
+  to {
+    translate: none;
+  }
+}
+
+@keyframes settle-top {
+  from {
+    translate: 0 -25px;
+  }
+  to {
+    translate: none;
+  }
+}
+
+@keyframes settle-bottom {
+  from {
+    translate: 0 25px;
+  }
+  to {
+    translate: none;
+  }
+}
+
+@keyframes to-right {
+  to {
+    right: 0;
+  }
+}
+
+/* Animaiton Keyframes End */
+
+/* Reduce Motion Media Start */
+@media (prefers-reduced-motion: reduce) {
+  button {
+    transition: none;
+  }
+}
+/* Reduce Motion Media End */

@@ -1,0 +1,121 @@
+.error-route {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  place-self: center;
+  user-select: none;
+  font-family: var(--font-saira-stencil-one);
+  gap: 10px;
+  border-radius: 100px;
+  position: relative;
+  background-color: var(--prm-col-2);
+  width: 220px;
+  padding-block: 7px;
+
+  & i {
+    font-size: 15px;
+  }
+
+  &::before {
+    content: "ERROR";
+    font-size: 15px;
+    border: 3px solid var(--bg-col);
+    padding-block: 5px;
+    border-radius: inherit;
+    width: 110px;
+    text-align: center;
+    z-index: 1;
+  }
+
+  & > :only-child {
+    display: flex;
+    gap: 10px;
+
+    & > * {
+      cursor: pointer;
+      background-color: inherit;
+      border: 3px solid var(--bg-col);
+      width: 33px;
+      aspect-ratio: 1;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      transition: background-color var(--trans-dur);
+
+      &:hover {
+        background-color: var(--prm-col-1);
+      }
+    }
+  }
+
+  &:has(> :only-child > :nth-child(2):hover)::before {
+    content: "INFO";
+  }
+
+  &:has(> :only-child > :nth-child(1):hover)::before {
+    content: "RELOAD";
+  }
+}
+
+/* error message */
+.error-msg-portal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgb(0 0 0 / 0.75);
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 200;
+  display: none;
+  text-align: center;
+
+  &.show {
+    display: flex;
+    animation: fade-in var(--trans-dur) linear forwards;
+  }
+
+  & > h2 {
+    font-weight: bolder;
+    font-size: 20px;
+    color: var(--prm-col-1);
+    user-select: none;
+  }
+
+  & > p {
+    border: 3px solid var(--prm-col-2);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 12px;
+    max-width: 700px;
+    max-height: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: var(--bg-col);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .error-msg-portal.show {
+    animation: none;
+  }
+}
+
+@media only screen and (max-width: 250px) {
+  .error-route {
+    width: 135px;
+    border-radius: 20px;
+    flex-direction: column;
+  }
+
+  .error-msg-portal > p {
+    width: 100%;
+  }
+}

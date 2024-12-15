@@ -1,0 +1,36 @@
+.spinner {
+  color: var(--prm-col-1);
+  user-select: none;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > svg {
+    width: 70px;
+    aspect-ratio: 1;
+    border-radius: inherit;
+
+    & > circle {
+      border-radius: inherit;
+      fill: none;
+      stroke-width: 4px;
+      stroke: var(--prm-col-1);
+      stroke-dasharray: calc(var(--fill) / 7) var(--emp);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      transform-origin: center;
+
+      &:nth-child(1) {
+        stroke-dasharray: calc((232 - 7) / 7) 7;
+        animation-name: spin-anticlockwise;
+      }
+      &:nth-child(2) {
+        stroke-dasharray: calc((180 - 7) / 7) 7;
+        animation-name: spin-clockwise;
+      }
+    }
+  }
+}

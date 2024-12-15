@@ -1,0 +1,50 @@
+.logo {
+  width: fit-content;
+  display: flex;
+  transition: color var(--trans-dur);
+  font-family: var(--font-saira-stencil-one);
+
+  &:hover {
+    color: var(--prm-col-1);
+  }
+
+  & > * {
+    width: 0;
+    overflow: hidden;
+    animation: fill-width 1s ease-in-out forwards;
+    animation-delay: calc(0.3s * var(--mult));
+  }
+
+  & > :nth-child(1) {
+    --mult: 1;
+  }
+  & > :nth-child(2) {
+    --mult: 2;
+  }
+  & > :nth-child(3) {
+    --mult: 3;
+  }
+  & > :nth-child(4) {
+    --mult: 4;
+  }
+  & > :nth-child(5) {
+    --mult: 5;
+  }
+  & > :nth-child(6) {
+    --mult: 6;
+  }
+  & > :nth-child(7) {
+    --mult: 9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo {
+    transition: none;
+
+    & > * {
+      animation: none;
+      width: auto;
+    }
+  }
+}

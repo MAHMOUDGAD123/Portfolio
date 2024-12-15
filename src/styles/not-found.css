@@ -1,0 +1,43 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  font-family: var(--font-saira-stencil-one);
+  margin-top: 50px;
+  --font-size: 150px;
+
+  & h1 {
+    font-size: var(--font-size);
+    color: var(--prm-col-1);
+    filter: drop-shadow(0 0 calc(var(--font-size) * 0.5) var(--prm-col-1));
+    position: relative;
+
+    &::before {
+      content: "PAGE NOT FOUND";
+      white-space: nowrap;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      translate: -50% -50%;
+      font-size: calc(var(--font-size) * 0.25);
+      filter: drop-shadow(0 0 calc(var(--font-size) * 0.5) var(--prm-col-1));
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .not-found {
+    --font-size: 120px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .not-found {
+    --font-size: 100px;
+  }
+}
+@media only screen and (max-width: 250px) {
+  .not-found {
+    --font-size: 80px;
+  }
+}

@@ -1,0 +1,53 @@
+.animated-text-list {
+  --show: none;
+  display: inline-block;
+  position: relative;
+  user-select: none;
+
+  &::before {
+    content: attr(data-fill-width);
+    opacity: 0;
+  }
+
+  & > * {
+    display: var(--show);
+    position: absolute;
+    left: 0;
+    color: transparent;
+    /* -webkit-text-stroke: 0.7px var(--prm-col-1); */
+    animation: display-text var(--duration) linear infinite;
+    animation-delay: calc(var(--delay) * var(--mult) * -1);
+
+    &::before {
+      content: attr(data-text);
+      position: absolute;
+      white-space: nowrap;
+      width: 0;
+      border-right: 1px solid var(--prm-col-1);
+      color: var(--prm-col-1);
+      animation: fill-text var(--delay) linear infinite;
+      overflow: hidden;
+    }
+  }
+}
+
+@keyframes fill-text {
+  0% {
+    width: 0;
+  }
+  50%,
+  70% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-text-list > *::before {
+    animation: none;
+    width: 100%;
+    border: none;
+  }
+}

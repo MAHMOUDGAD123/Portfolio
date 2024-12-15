@@ -1,0 +1,91 @@
+.main-nav {
+  --link-width: 100px;
+  --paddding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--sec-col-1);
+  font-weight: bold;
+  position: relative;
+
+  & > * {
+    border-radius: 100px;
+    width: var(--link-width);
+    min-width: var(--link-width);
+    padding-block: var(--paddding);
+  }
+
+  & > a {
+    z-index: 1;
+    text-align: center;
+    transition: color var(--trans-dur);
+
+    &:is(:focus, :focus-visible, :hover) {
+      color: light-dark(var(--lit-txt-col), var(--drk-txt-col));
+    }
+
+    &.active {
+      color: var(--prm-col-1) !important;
+
+      & ~ .navIndicator {
+        display: unset;
+      }
+
+      &:nth-child(1) ~ .navIndicator {
+        left: 0;
+      }
+      &:nth-child(2) ~ .navIndicator {
+        left: var(--link-width);
+      }
+      &:nth-child(3) ~ .navIndicator {
+        left: calc(2 * var(--link-width));
+      }
+      &:nth-child(4) ~ .navIndicator {
+        left: calc(3 * var(--link-width));
+      }
+      &:nth-child(5) ~ .navIndicator {
+        left: calc(4 * var(--link-width));
+      }
+    }
+  }
+
+  & > .navIndicator {
+    display: none;
+    position: absolute;
+    height: 100%;
+    background-image: linear-gradient(
+      90deg,
+      light-dark(#eee, #222),
+      light-dark(#ccc, #333)
+    );
+    transition: left var(--trans-dur);
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-nav {
+    & > a {
+      transition: none;
+    }
+
+    & > .navIndicator {
+      transition: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .main-nav {
+    --link-width: 85px;
+    font-size: 0.85rem;
+  }
+}
+
+@media only screen and (width <= 850px) {
+  .main-nav {
+    display: none;
+  }
+}

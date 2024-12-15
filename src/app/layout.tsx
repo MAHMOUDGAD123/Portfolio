@@ -1,0 +1,53 @@
+import "@/styles/_globals.css";
+import "@/fonts/fa/css/all.min.css";
+import React from "react";
+import { Metadata } from "next";
+import localFont from "next/font/local";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import Script from "next/script";
+
+const robotoMono = localFont({
+  src: "../fonts/RobotoMono.woff2",
+  variable: "--font-roboto-mono",
+  display: "swap",
+  preload: true,
+});
+
+const sairaStencilOne = localFont({
+  src: "../fonts/SairaStencilOne.woff2",
+  variable: "--font-saira-stencil-one",
+  display: "swap",
+  preload: true,
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: "MG",
+    template: "%s - MG",
+  },
+  icons: "/imgs/favicon.svg",
+};
+
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html
+      lang="en"
+      className={`${robotoMono.variable} ${sairaStencilOne.variable}`}
+    >
+      <body className="mx-auto w-[900px] animate-fadeIn opacity-0 motion-reduce:animate-none motion-reduce:opacity-100 max-_3xl:max-w-[800px] max-_2xl:max-w-[750px] max-_xl:max-w-[500px] max-_lg:max-w-[400px] max-_md:max-w-[300px] max-_sm:max-w-[240px] max-_usm:max-w-[195px]">
+        <Header />
+        <main className="relative min-h-[--main-height] w-full">
+          {children}
+        </main>
+        <Footer />
+
+        <Script src="/scripts.js" strategy="lazyOnload" />
+      </body>
+    </html>
+  );
+}
