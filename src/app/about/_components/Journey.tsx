@@ -1,4 +1,4 @@
-import AutoWrittenParagraph from "@/app/about/@journey/_components/AutoWrittenParagraph";
+import AutoWrittenParagraph from "@/components/animation/AutoWrittenParagraph";
 
 export default async function Journey() {
   const links: [string, string][] = [

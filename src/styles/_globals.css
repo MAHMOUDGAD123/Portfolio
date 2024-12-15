@@ -8,13 +8,11 @@
 
   --drk-txt-col: #ededed;
   --lit-txt-col: #171717;
-  --sec-txt-col: #999;
+  --sec-txt-col: #777;
 
   --prm-col-1: dodgerblue;
-  --prm-col-2: rgb(30 144 255 / 0.5);
+  --prm-col-2: #1e90ff80;
   --sec-col-1: #686868;
-
-  --paragraph-text-opacity: 0.7;
 
   --header-height: 90px;
   --main-height: calc(100dvh - var(--header-height));

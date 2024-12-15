@@ -46,7 +46,7 @@ export default function IncrementalStatistic({ total, title }: Props) {
 
   return (
     <div className="flex items-center gap-2">
-      <div className="text-[45px] font-extrabold max-_md:text-[37px]">
+      <div className="text-[45px] font-extrabold max-_md:text-[40px]">
         {counter}
       </div>
       <div className="text-[12px] opacity-70">

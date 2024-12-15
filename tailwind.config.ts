@@ -20,6 +20,10 @@ export default {
       },
       colors: {
         dodgerblue: "#1e90ff",
+        dodgerblue_50: "#1e90ff80",
+        SecTextCol: "#777",
+        drkTxtCol: "#ededed",
+        litTxtCol: "#171717",
       },
       backgroundImage: {
         gradient: "linear-gradient(to right, #1e90ff, var(--text-col))",
