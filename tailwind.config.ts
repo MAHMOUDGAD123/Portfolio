@@ -32,7 +32,10 @@ export default {
         roboMono: ["var(--font-roboto-mono)"],
         saira: ["var(--font-saira-stencil-one)"],
       },
+      keyframes: {},
       animation: {
+        spinClockwise: "spin-clockwise 1s linear infinite",
+        spinAntiClockwise: "spin-anticlockwise 1s linear infinite",
         fillWidth: "fill-width 100ms linear forwards",
         halfWidth: "half-width 1s linear forwards",
         fullWidth: "full-width 1s linear forwards",

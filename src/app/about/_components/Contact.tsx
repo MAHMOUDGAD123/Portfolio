@@ -30,7 +30,7 @@ export default async function Contact() {
           key={title}
           className="flex items-center gap-[20px] max-_md:flex-col"
         >
-          <div className="flex aspect-square w-[65px] items-center justify-center rounded-[10px] bg-[#ddd] text-[25px] text-dodgerblue dark:bg-[#222]">
+          <div className="flex aspect-square w-[65px] items-center justify-center rounded-[10px] bg-[#ddd] text-[25px] text-dodgerblue *:hover:animate-pulse *:hover:[animation-duration:1s] motion-reduce:*:hover:animate-none dark:bg-[#222]">
             <i className={iconClass}></i>
           </div>
           <div className="flex flex-1 flex-col items-start justify-center gap-[7px] max-_md:items-center">
