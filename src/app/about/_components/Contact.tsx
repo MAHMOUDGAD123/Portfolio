@@ -7,12 +7,6 @@ interface ContactType {
 
 const contact: ContactType[] = [
   {
-    iconClass: "fa-solid fa-location-dot",
-    title: "Address",
-    info: "Mansourah - Dakahliah - Egypt",
-    split: true,
-  },
-  {
     iconClass: "fa-solid fa-phone",
     title: "Phone",
     info: "(+20) 1097890670",
@@ -21,6 +15,12 @@ const contact: ContactType[] = [
     iconClass: "fa-solid fa-envelope",
     title: "Email",
     info: "hooda.gad333@gmail.com",
+  },
+  {
+    iconClass: "fa-solid fa-location-dot",
+    title: "Address",
+    info: "Mansourah - Egypt",
+    split: true,
   },
 ];
 
@@ -36,16 +36,12 @@ export default async function Contact() {
             <i className={iconClass}></i>
           </div>
           <div className="flex flex-1 flex-col items-start justify-center gap-[7px] max-_md:items-center">
-            <span className="text-SecTextCol text-[14px] font-extrabold">
+            <span className="text-[14px] font-extrabold text-SecTextCol">
               {title}
             </span>
 
             <div className="flex gap-[10px] text-[15px] max-_sm:flex-col max-_sm:gap-[5px] max-_usm:text-[13px]">
-              {split ? (
-                info.split(" ").map((txt, i) => <span key={i}>{txt}</span>)
-              ) : (
-                <span>{info}</span>
-              )}
+              {info}
             </div>
           </div>
         </div>

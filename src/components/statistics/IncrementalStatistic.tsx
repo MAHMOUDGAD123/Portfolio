@@ -46,12 +46,14 @@ export default function IncrementalStatistic({ total, title }: Props) {
 
   return (
     <div className="flex items-center gap-2">
-      <div className="text-[45px] font-extrabold max-_md:text-[40px]">
+      <div className="text-[45px] font-extrabold max-_md:text-[39px]">
         {counter}
       </div>
       <div className="text-[12px] opacity-70">
         {title.split("|").map((text, i) => (
-          <div key={i}>{text}</div>
+          <div key={i} className="whitespace-nowrap">
+            {text}
+          </div>
         ))}
       </div>
     </div>
