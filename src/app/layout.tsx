@@ -56,7 +56,7 @@ export default async function RootLayout({
           strokeDashPlus={30}
           translateX="-50%"
           translateY="-50%"
-          top={"50%"}
+          top={500}
           left={-30}
           durationStart={3}
           strokeOpacity={0.2}
