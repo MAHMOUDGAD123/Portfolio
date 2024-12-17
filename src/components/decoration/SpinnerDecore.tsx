@@ -65,7 +65,7 @@ export default function SpinnerDecore({
           fill: "currentcolor",
         }}
         width={N_STROKE * R_PLUS * 2}
-        className="aspect-square rounded-[inherit] stroke-current [stroke-linejoin:round] [&>:nth-child(1)]:[stroke-dasharray:none] [&>:nth-child(n+2)]:[animation-iteration-count:infinite] [&>:nth-child(n+2)]:[animation-timing-function:linear]"
+        className="aspect-square rounded-[inherit] stroke-current [stroke-linejoin:round] [&>:nth-child(1)]:[stroke-dasharray:none] [&>:nth-child(n+2)]:[animation-iteration-count:infinite] [&>:nth-child(n+2)]:[animation-timing-function:linear] motion-reduce:[&>circle]:[animation-play-state:paused]"
       >
         {new Array(N_STROKE).fill(0).map((_, i) => (
           <circle
