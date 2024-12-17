@@ -11,10 +11,12 @@ interface Props {
   radiusPlus?: number;
   strokeDashStart?: number;
   strokeDashPlus?: number;
-  top?: number;
-  left?: number;
-  right?: number;
-  bottom?: number;
+  translateX?: string | number;
+  translateY?: string | number;
+  top?: string | number;
+  left?: string | number;
+  right?: string | number;
+  bottom?: string | number;
   animate?: boolean;
   spinDirection?: SpinDir;
   strokeOpacity?: StrokeRange;
@@ -26,6 +28,8 @@ export default function SpinnerDecore({
   left,
   right,
   bottom,
+  translateX,
+  translateY,
   strokeWidth,
   durationStart,
   radiusStart,
@@ -52,6 +56,7 @@ export default function SpinnerDecore({
     <div
       className="spinner-decore fixed -z-10 flex h-fit w-fit select-none items-center justify-center rounded-full text-dodgerblue"
       style={{
+        translate: `${translateX} ${translateY}`,
         top: top,
         left: left,
         right: right,
