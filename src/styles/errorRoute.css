@@ -11,6 +11,7 @@
   background-color: var(--prm-col-2);
   width: 220px;
   padding-block: 7px;
+  margin-inline: auto;
 
   & i {
     font-size: 15px;
