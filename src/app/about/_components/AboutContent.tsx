@@ -26,11 +26,17 @@ export const JourneyParagraphStateContext = createContext<{
 
 interface Props {
   journey: React.ReactNode;
+  education: React.ReactNode;
   skills: React.ReactNode;
   contact: React.ReactNode;
 }
 
-export default function AboutContent({ journey, skills, contact }: Props) {
+export default function AboutContent({
+  journey,
+  education,
+  skills,
+  contact,
+}: Props) {
   // Journey Context Start
   const [journeyParagraphState, updateJourneyParagraphState] =
     useState<JourneyParagraphStateContextType>(initialState);
@@ -59,14 +65,18 @@ export default function AboutContent({ journey, skills, contact }: Props) {
 
   const pathName = usePathname();
   const routeMap = new Map<string, [string, React.ReactNode, string]>([
-    ["/about", ["My Journey", journey, "Crafting sleek||web interfaces."]],
+    ["/about", ["My Journey", journey, "Crafting sleek|web interfaces."]],
+    [
+      "/about/education",
+      ["My Education", education, "Crafting sleek|web interfaces."],
+    ],
     [
       "/about/skills",
-      ["My Skills", skills, "Designing smooth||user experiences."],
+      ["My Skills", skills, "Designing smooth|user experiences."],
     ],
     [
       "/about/contact",
-      ["My Contact", contact, "Coding interactive||digital solutions."],
+      ["My Contact", contact, "Coding interactive|digital solutions."],
     ],
   ]);
   const [title, component] = routeMap.get(pathName)!;
@@ -89,7 +99,7 @@ export default function AboutContent({ journey, skills, contact }: Props) {
           <div className="mb-[50px] text-[20px] font-extrabold max-_xl:mx-auto max-_xl:text-center max-_xl:text-[30px] max-_md:text-[25px] max-_sm:text-[18px]">
             {routeMap
               .get(pathName)![2]
-              .split("||")
+              .split("|")
               .map((txt, i) => (
                 <div key={txt} className="whitespace-nowrap">
                   {i === 0
@@ -111,7 +121,7 @@ export default function AboutContent({ journey, skills, contact }: Props) {
         </div>
 
         <div className="relative flex-1 animate-settleRight motion-reduce:animate-none max-_xl:text-center">
-          <h1 className="relative mb-[50px] w-fit select-none whitespace-nowrap text-[35px] font-extrabold before:absolute before:left-0 before:top-[105%] before:h-[3px] before:w-[0%] before:animate-halfWidth before:rounded-full before:bg-dodgerblue before:transition-[left] before:duration-500 after:absolute after:right-0 after:top-[-5%] after:h-[3px] after:w-[0%] after:animate-halfWidth after:rounded-full after:bg-dodgerblue after:transition-[right] after:duration-500 hover:before:left-[50%] hover:after:right-[50%] before:motion-reduce:w-[50%] before:motion-reduce:animate-none after:motion-reduce:w-[50%] after:motion-reduce:animate-none motion-reduce:hover:before:left-0 motion-reduce:hover:after:right-0 max-_xl:mx-auto max-_xl:mb-[70px] max-_usm:text-[25px]">
+          <h1 className="relative mb-[50px] w-fit select-none whitespace-nowrap text-[33px] font-extrabold before:absolute before:left-0 before:top-[105%] before:h-[3px] before:w-[0%] before:animate-halfWidth before:rounded-full before:bg-dodgerblue before:transition-[left] before:duration-500 after:absolute after:right-0 after:top-[-5%] after:h-[3px] after:w-[0%] after:animate-halfWidth after:rounded-full after:bg-dodgerblue after:transition-[right] after:duration-500 hover:before:left-[50%] hover:after:right-[50%] before:motion-reduce:w-[50%] before:motion-reduce:animate-none after:motion-reduce:w-[50%] after:motion-reduce:animate-none motion-reduce:hover:before:left-0 motion-reduce:hover:after:right-0 max-_xl:mx-auto max-_xl:mb-[70px] max-_usm:text-[25px]">
             {title}
           </h1>
 

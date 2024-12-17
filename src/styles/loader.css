@@ -14,21 +14,6 @@
     aspect-ratio: 1;
     border-radius: inherit;
 
-    & > text {
-      font-family: var(--font-roboto-mono);
-      font-size: 15px;
-      transition-property: color;
-      transition-duration: var(--trans-dur);
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      fill: #fff;
-      text-anchor: middle;
-
-      &::selection {
-        color: var(--prm-col-1);
-      }
-    }
-
     & > circle {
       border-radius: inherit;
       fill: none;

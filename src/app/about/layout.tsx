@@ -9,12 +9,14 @@ export const metadata: Metadata = {
 interface Props {
   children: React.ReactNode;
   journey: React.ReactNode;
+  education: React.ReactNode;
   contact: React.ReactNode;
   skills: React.ReactNode;
 }
 
 export default function AboutLayout({
   children,
+  education,
   journey,
   contact,
   skills,
@@ -22,7 +24,12 @@ export default function AboutLayout({
   return (
     <PageHolder>
       {children}
-      <AboutContent journey={journey} contact={contact} skills={skills} />
+      <AboutContent
+        journey={journey}
+        contact={contact}
+        skills={skills}
+        education={education}
+      />
     </PageHolder>
   );
 }

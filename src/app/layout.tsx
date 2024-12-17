@@ -6,6 +6,7 @@ import localFont from "next/font/local";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Script from "next/script";
+import SpinnerDecore from "@/components/decoration/SpinnerDecore";
 
 const robotoMono = localFont({
   src: "../fonts/RobotoMono.woff2",
@@ -45,6 +46,21 @@ export default async function RootLayout({
           {children}
         </main>
         <Footer />
+
+        <SpinnerDecore
+          nStroke={30}
+          strokeWidth={20}
+          durationStart={1.25}
+          radiusStart={7}
+          radiusPlus={20}
+          strokeDashStart={30}
+          strokeDashPlus={30}
+          top={100}
+          right={100}
+          strokeOpacity={0.1}
+        />
+
+        {/* <SpinnerDecore durationStart={0.75} bottom={50} left={0} /> */}
 
         <Script src="/scripts.js" strategy="lazyOnload" />
       </body>
