@@ -57,10 +57,8 @@ export default async function RootLayout({
           strokeDashPlus={30}
           top={100}
           right={100}
-          strokeOpacity={0.1}
+          strokeOpacity={0.2}
         />
-
-        {/* <SpinnerDecore durationStart={0.75} bottom={50} left={0} /> */}
 
         <Script src="/scripts.js" strategy="lazyOnload" />
       </body>
