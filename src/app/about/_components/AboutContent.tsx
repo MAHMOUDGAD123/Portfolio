@@ -68,7 +68,7 @@ export default function AboutContent({
     ["/about", ["My Journey", journey, "Crafting sleek|web interfaces."]],
     [
       "/about/education",
-      ["My Education", education, "Crafting sleek|web interfaces."],
+      ["My Education", education, "building intuitive|user interfaces"],
     ],
     [
       "/about/skills",
