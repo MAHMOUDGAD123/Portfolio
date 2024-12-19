@@ -48,10 +48,10 @@ export default async function RootLayout({
         <Footer />
 
         <SpinnerDecore
-          nStroke={10}
-          strokeWidth={17}
+          nStroke={7}
+          strokeWidth={25}
           radiusStart={20}
-          radiusPlus={35}
+          radiusPlus={55}
           strokeDashStart={30}
           strokeDashPlus={30}
           translateX="-50%"
