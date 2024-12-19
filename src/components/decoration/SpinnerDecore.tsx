@@ -74,7 +74,7 @@ export default function SpinnerDecore({
       >
         {new Array(N_STROKE).fill(0).map((_, i) => (
           <circle
-            className="origin-center rounded-[inherit] fill-none [stroke-linecap:round]"
+            className="origin-center rounded-[inherit] fill-none [stroke-linecap:round] transform-gpu"
             key={i}
             cx="50%"
             cy="50%"
