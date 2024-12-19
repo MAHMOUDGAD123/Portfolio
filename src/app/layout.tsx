@@ -49,7 +49,7 @@ export default async function RootLayout({
 
         <SpinnerDecore
           nStroke={7}
-          strokeWidth={22}
+          strokeWidth={30}
           radiusStart={20}
           radiusPlus={55}
           strokeDashStart={40}
@@ -58,7 +58,7 @@ export default async function RootLayout({
           translateY="-50%"
           top={500}
           left={-30}
-          durationStart={7}
+          durationStart={3}
           strokeOpacity={0.2}
         />
 
