@@ -193,6 +193,15 @@ button {
   }
 }
 
+@keyframes settle-x-gpu {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 /* Animaiton Keyframes End */
 
 /* Reduce Motion Media Start */
