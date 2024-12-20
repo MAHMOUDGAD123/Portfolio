@@ -9,7 +9,7 @@ export default function SideNav() {
   const [show, setShow] = useState<boolean>(false);
 
   return (
-    <div className="side-nav z-[100] font-extrabold text-current _xl:hidden">
+    <div className="z-[100] font-extrabold text-current _xl:hidden">
       <div
         className="cursor-pointer text-[20px] text-[--sec-col-1] transition-colors duration-[--trans-dur] hover:text-[--prm-col-1] motion-reduce:transition-none"
         onClick={() => setShow((current) => !current)}
@@ -19,14 +19,14 @@ export default function SideNav() {
 
       {show && (
         <div
-          className="side-nav-menu fixed left-1/2 top-1/2 flex h-[100dvh] w-[100dvw] translate-x-[-50%] translate-y-[-50%] flex-row-reverse bg-[rgb(0,0,0,0.85)]"
+          className="fixed left-1/2 top-1/2 flex h-[100dvh] w-[100dvw] translate-x-[-50%] translate-y-[-50%] flex-row-reverse bg-[rgb(0,0,0,0.85)]"
           onClick={(e) => {
             if (e.target === e.currentTarget) {
               setShow(false);
             }
           }}
         >
-          <nav className="relative right-[-30%] flex h-full animate-[to-right_var(--trans-dur)_linear_forwards] flex-col items-center justify-start gap-[30px] bg-[light-dark(#eee,#111)] px-[30px] py-[20px] text-[17px] font-bold text-[--sec-col-1] motion-reduce:right-0 motion-reduce:animate-none">
+          <nav className="relative right-[-30%] flex h-full animate-settleX flex-col items-center justify-start gap-[30px] bg-[light-dark(#eee,#111)] px-[30px] py-[20px] text-[17px] font-bold text-[--sec-col-1] motion-reduce:right-0 motion-reduce:animate-none">
             <h1 className="mt-[15px] font-saira text-dodgerblue">MG</h1>
 
             <hr className="h-[1px] w-full rounded-[100%] bg-[light-dark(#ccc,#333)]" />
@@ -46,7 +46,7 @@ export default function SideNav() {
                     setShow(false);
                   }}
                 >
-                  <div className="nav-item flex w-[100px] items-center justify-between gap-[10px] [&:nth-child(2)]:text-[16px]">
+                  <div className="flex w-[100px] items-center justify-between gap-[10px] [&:nth-child(2)]:text-[16px]">
                     <i className={iconClass}></i>
                     <span>{name}</span>
                   </div>
