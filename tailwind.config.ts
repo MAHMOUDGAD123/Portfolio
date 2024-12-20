@@ -36,7 +36,7 @@ export default {
       },
       keyframes: {},
       animation: {
-        settleX: "settle-x-gpu 1s linear forwards",
+        settleX: "settle-x-gpu 500ms linear forwards",
         spinClockwise: "spin-clockwise 1s linear infinite",
         spinAntiClockwise: "spin-anticlockwise 1s linear infinite",
         fillWidth: "fill-width 100ms linear forwards",
