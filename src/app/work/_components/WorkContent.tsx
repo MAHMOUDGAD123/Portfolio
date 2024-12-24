@@ -34,7 +34,7 @@ const PROJECTS: Project[] = [
     liveLink: "https://egypt-prices.netlify.app/",
     githubLink: "https://github.com/MAHMOUDGAD123/EG_Prices",
     githubAPILink: "https://github.com/MAHMOUDGAD123/egPricesApi",
-    techs: ["HTML5", "CSS3", "JavaScript", "NodeJs", "ExpressJs"],
+    techs: ["HTML5", "CSS3", "JavaScript", "NodeJs", "ExpressJs", "cheerio"],
   },
   {
     count: "03",
@@ -53,7 +53,7 @@ export default function WorkContent() {
   const [activeProject, setActiveProject] = useState<number>(0);
 
   return (
-    <div className="relative flex flex-col gap-[20px]">
+    <div className="relative flex w-full flex-col gap-[20px]">
       <div className="absolute right-0 top-[-35px] flex animate-fadeIn gap-[20px] self-center text-[30px] text-dodgerblue *:cursor-pointer *:opacity-50 *:transition-opacity hover:*:opacity-100 motion-reduce:animate-none max-_xl:static max-_xl:right-auto max-_xl:mb-[20px]">
         <i
           className="fa-solid fa-circle-chevron-left"

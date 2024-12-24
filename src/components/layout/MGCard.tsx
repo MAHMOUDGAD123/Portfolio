@@ -29,10 +29,12 @@ export default function MGCard() {
         </p>
 
         <div className="mt-[40px] flex items-center justify-start gap-6 max-_xl:flex-col">
-          <button className="flex items-center gap-3 max-_usm:text-[13px]">
-            <span>DOWNLOAD CV</span>
-            <i className="fa-solid fa-download"></i>
-          </button>
+          <a href="/CV.pdf" download>
+            <button className="flex items-center gap-3 max-_usm:text-[13px]">
+              <span>DOWNLOAD CV</span>
+              <i className="fa-solid fa-download"></i>
+            </button>
+          </a>
           <div className="inline-flex items-center gap-3 text-[20px] text-[var(--prm-col-1)] *:flex *:aspect-square *:w-[40px] *:items-center *:justify-center *:rounded-full *:border-solid *:border-[var(--prm-col-1)] *:transition-colors *:duration-[var(--trans-dur)] hover:*:bg-[var(--prm-col-1)] hover:*:text-[var(--drk-txt-col)] motion-reduce:*:transition-none">
             <a href="https://github.com/MAHMOUDGAD123" target="_blank">
               <i className="fa-brands fa-github"></i>
