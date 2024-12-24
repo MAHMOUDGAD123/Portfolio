@@ -18,7 +18,7 @@ const contact: ContactType[] = [
   {
     iconClass: "fa-solid fa-location-dot",
     title: "Address",
-    info: "Mansourah - Egypt",
+    info: "Al Mansurah - Egypt",
   },
 ];
 
