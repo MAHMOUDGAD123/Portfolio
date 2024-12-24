@@ -36,7 +36,7 @@ export default function IncrementalStatistic({ total, title }: Props) {
             case 1:
               return 500;
             default:
-              return 10;
+              return 5;
           }
         })(),
       );
