@@ -45,9 +45,11 @@ export const getDuration = (sinceDate: string) => {
   return { count: 0, label: "just now" };
 };
 
-type RepoType = {
-  [key: string]: any;
-} & { name: string };
+type KeyValue = {
+  [key: string]: unknown;
+};
+
+type RepoType = KeyValue & { name: string };
 
 export const getGithubCommitCount = async () => {
   const fakeTotle = 200;
@@ -72,11 +74,12 @@ export const getGithubCommitCount = async () => {
       const commitsRes = await fetch(
         `https://api.github.com/repos/MAHMOUDGAD123/${repo.name}/commits`,
       );
-      const commits: any[] = await commitsRes.json();
+      const commits: KeyValue[] = await commitsRes.json();
       count += commits.length;
     }
     return count;
   } catch (err) {
+    console.log((err as Error).message);
     return fakeTotle;
   }
 };
