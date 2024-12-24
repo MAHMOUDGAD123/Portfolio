@@ -12,7 +12,6 @@ interface Project {
   githubLink: string;
   githubAPILink?: string;
   techs: string[];
-  col: string;
 }
 
 const PROJECTS: Project[] = [
@@ -25,7 +24,6 @@ const PROJECTS: Project[] = [
     liveLink: "https://prayertimesv1.netlify.app/",
     githubLink: "https://github.com/MAHMOUDGAD123/PrayerTimes",
     techs: ["HTML5", "CSS3", "JavaScript"],
-    col: "#648d07",
   },
   {
     count: "02",
@@ -37,7 +35,6 @@ const PROJECTS: Project[] = [
     githubLink: "https://github.com/MAHMOUDGAD123/EG_Prices",
     githubAPILink: "https://github.com/MAHMOUDGAD123/egPricesApi",
     techs: ["HTML5", "CSS3", "JavaScript", "NodeJs", "ExpressJs"],
-    col: "#c94a00",
   },
   {
     count: "03",
@@ -49,7 +46,6 @@ const PROJECTS: Project[] = [
     githubLink: "https://github.com/MAHMOUDGAD123/vidl-client",
     githubAPILink: "https://github.com/MAHMOUDGAD123/vidl-api",
     techs: ["ReactJs", "React Router", "NodeJs", "ExpressJs", "Vite"],
-    col: "#283547",
   },
 ];
 
@@ -57,8 +53,8 @@ export default function WorkContent() {
   const [activeProject, setActiveProject] = useState<number>(0);
 
   return (
-    <div className="flex flex-col gap-[20px]">
-      <div className="flex animate-fadeIn gap-[20px] self-center text-[30px] text-dodgerblue *:cursor-pointer *:opacity-50 *:transition-opacity hover:*:opacity-100 motion-reduce:animate-none">
+    <div className="relative flex flex-col gap-[20px]">
+      <div className="absolute right-0 top-[-35px] flex animate-fadeIn gap-[20px] self-center text-[30px] text-dodgerblue *:cursor-pointer *:opacity-50 *:transition-opacity hover:*:opacity-100 motion-reduce:animate-none max-_xl:static max-_xl:right-auto max-_xl:mb-[20px]">
         <i
           className="fa-solid fa-circle-chevron-left"
           onClick={() =>
@@ -84,7 +80,7 @@ export default function WorkContent() {
             {PROJECTS[activeProject].count}
           </span>
 
-          <span className="mb-[10px] text-[45px] font-extrabold text-dodgerblue max-_usm:text-[35px]">
+          <span className="mb-[10px] text-[45px] font-extrabold text-dodgerblue max-_sm:text-[35px]">
             {PROJECTS[activeProject].title}
           </span>
 
