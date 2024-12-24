@@ -1,4 +1,4 @@
-import CustomLink from "./CustomLink";
+import CustomLink from "@/components/navigation/CustomLink";
 
 const aboutLinks: { text: string; href: string }[] = [
   { text: "Journey", href: "/about" },

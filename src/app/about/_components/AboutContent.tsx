@@ -1,5 +1,6 @@
 "use client";
-import AboutNav from "@/components/navigation/AboutNav";
+import ContentTitle from "@/components/decoration/ContentTitle";
+import AboutNav from "./AboutNav";
 import { usePathname } from "next/navigation";
 import { createContext, useCallback, useState, type ReactNode } from "react";
 
@@ -90,9 +91,7 @@ export default function AboutContent({
         updateNodes,
       }}
     >
-      <h1 className="mx-auto mb-[50px] w-fit animate-settleTop select-none whitespace-nowrap bg-gradient bg-clip-text text-center font-saira text-[45px] text-transparent opacity-70 motion-reduce:animate-none max-_sm:text-[35px] max-_usm:text-[30px]">
-        ABOUT ME ?
-      </h1>
+      <ContentTitle title="ABOUT ME ?" />
 
       <div className="flex gap-[70px] max-_xl:flex-col max-_xl:items-center">
         <div className="w-[215px] animate-settleLeft motion-reduce:animate-none max-_xl:m-auto max-_xl:w-full">
