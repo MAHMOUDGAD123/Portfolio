@@ -54,7 +54,7 @@ export default function WorkContent() {
 
   return (
     <div className="relative flex w-full flex-col gap-[20px]">
-      <div className="absolute right-0 top-[-35px] flex animate-fadeIn gap-[25px] self-center text-[35px] text-dodgerblue *:cursor-pointer *:opacity-60 *:transition-opacity hover:*:opacity-100 motion-reduce:animate-none max-_xl:right-auto max-_xl:mb-[30px]">
+      <div className="absolute right-0 top-[-35px] flex animate-fadeIn gap-[25px] self-center text-[35px] text-dodgerblue *:cursor-pointer *:opacity-50 *:transition-opacity hover:*:opacity-100 motion-reduce:animate-none max-_xl:right-auto max-_xl:static max-_xl:mb-[30px]">
         <i
           className="fa-solid fa-circle-chevron-left"
           onClick={() =>
