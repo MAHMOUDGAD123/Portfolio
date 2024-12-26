@@ -34,7 +34,7 @@ export default async function Contact() {
       <div className="flex flex-wrap gap-[50px] *:flex-1">
         <ContactMeForm />
 
-        <div className="flex flex-col place-content-center gap-[30px] max-_md:gap-[40px]">
+        <div className="flex animate-settleRight flex-col place-content-center gap-[30px] motion-reduce:animate-none max-_md:gap-[40px]">
           {contact.map(({ iconClass, title, info }) => (
             <div
               key={title}

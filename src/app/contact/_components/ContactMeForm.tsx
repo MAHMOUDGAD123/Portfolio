@@ -81,7 +81,7 @@ export default function ContactMeForm() {
     <form
       noValidate
       action={action}
-      className="flex w-full flex-col gap-[35px] rounded-[20px] bg-[linear-gradient(-90deg,var(--prm-col-3),transparent,var(--prm-col-5))] p-[20px]"
+      className="flex w-full animate-settleLeft flex-col gap-[35px] rounded-[20px] bg-[linear-gradient(-90deg,var(--prm-col-3),transparent,var(--prm-col-5))] p-[20px] motion-reduce:animate-none"
     >
       <p className="text-[25px] font-extrabold text-dodgerblue">
         Let&apos;s Connect
