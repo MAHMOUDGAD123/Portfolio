@@ -78,6 +78,7 @@ export const contactMeAction = async (
       };
     }
   } catch (error) {
+    console.log("error:", (error as ZodError).message);
     return {
       success: false,
       title: "Message Failed to Send",

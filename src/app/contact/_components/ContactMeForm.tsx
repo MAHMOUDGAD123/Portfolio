@@ -74,7 +74,7 @@ export default function ContactMeForm() {
 
       setCanSend(false);
     }
-  }, [state]);
+  }, [state, canSend]);
 
   return (
     <form
@@ -83,7 +83,7 @@ export default function ContactMeForm() {
       className="flex w-full flex-col gap-[35px] rounded-[20px] bg-[linear-gradient(-90deg,var(--prm-col-3),transparent,var(--prm-col-5))] p-[20px]"
     >
       <p className="text-[25px] font-extrabold text-dodgerblue">
-        Let's Connect
+        Let&apos;s Connect
       </p>
       <CustomInput
         key="name"
