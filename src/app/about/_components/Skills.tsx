@@ -14,7 +14,7 @@ import {
 } from "@/components/icons/WebTechs";
 
 export default async function Skills() {
-  const icons: [React.ReactNode, string][] = [
+  const SKILLS_ICONS: [React.ReactNode, string][] = [
     [<HTML5 key={0} />, "HTML5"],
     [<CSS3 key={1} />, "CSS3"],
     [<Javascript key={2} />, "Javascript"],
@@ -28,7 +28,7 @@ export default async function Skills() {
 
   return (
     <div className="flex flex-wrap gap-[15px] max-_xl:justify-center">
-      {icons.map(([icon, title], i) => (
+      {SKILLS_ICONS.map(([icon, title], i) => (
         <FadeInAnimationProvider key={title} delayMs={i * 100}>
           <TitleOnHover title={title} position="top">
             <ImageIcon icon={icon} />

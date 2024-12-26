@@ -21,6 +21,8 @@ export default {
       colors: {
         dodgerblue: "#1e90ff",
         dodgerblue_50: "#1e90ff80",
+        dodgerblue_30: "#1e90ff30",
+        dodgerblue_20: "#1e90ff20",
         SecTextCol: "#777",
         drkTxtCol: "#ededed",
         litTxtCol: "#171717",

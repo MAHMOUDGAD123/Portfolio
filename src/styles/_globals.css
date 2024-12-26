@@ -24,6 +24,7 @@
 
   --text-col: light-dark(var(--lit-txt-col), var(--drk-txt-col));
   --bg-col: light-dark(var(--lit-bg-col), var(--drk-bg-col));
+  --sec-bg-col: light-dark(#999, #222222);
 
   background-color: var(--bg-col);
   color: var(--text-col);
@@ -78,14 +79,34 @@ button {
   color: var(--prm-col-1);
   user-select: none;
   white-space: nowrap;
+  font-weight: bolder;
 
-  &:hover {
+  &:is(:hover, :focus-visible) {
     background-color: var(--prm-col-1);
     color: var(--drk-txt-col);
   }
 }
 
+input,
+textarea {
+  transition: box-shadow var(--trans-dur);
+
+  &:is(:focus, :focus-visible) {
+    box-shadow: 0 0 0 3px var(--prm-col-1);
+  }
+
+  /* &:user-invalid {
+    animation: outline-blink 5s ease-in-out infinite;
+  } */
+}
+
 /* Animaiton Keyframes Start */
+@keyframes outline-blink {
+  50% {
+    box-shadow: none;
+  }
+}
+
 @keyframes spin-clockwise {
   from {
     transform: rotateZ(0deg);
@@ -208,6 +229,15 @@ button {
 @media (prefers-reduced-motion: reduce) {
   button {
     transition: none;
+  }
+
+  input,
+  textarea {
+    transition: none;
+
+    &:user-invalid {
+      animation: none;
+    }
   }
 }
 /* Reduce Motion Media End */

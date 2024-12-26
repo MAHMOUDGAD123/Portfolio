@@ -29,14 +29,14 @@ interface Props {
   journey: React.ReactNode;
   education: React.ReactNode;
   skills: React.ReactNode;
-  contact: React.ReactNode;
+  // contact: React.ReactNode;
 }
 
 export default function AboutContent({
   journey,
   education,
   skills,
-  contact,
+  // contact,
 }: Props) {
   // Journey Context Start
   const [journeyParagraphState, updateJourneyParagraphState] =
@@ -75,10 +75,10 @@ export default function AboutContent({
       "/about/skills",
       ["My Skills", skills, "Designing smooth|user experiences."],
     ],
-    [
-      "/about/contact",
-      ["My Contact", contact, "Coding interactive|digital solutions."],
-    ],
+    // [
+    //   "/about/contact",
+    //   ["My Contact", contact, "Coding interactive|digital solutions."],
+    // ],
   ]);
   const [title, component] = routeMap.get(pathName)!;
 

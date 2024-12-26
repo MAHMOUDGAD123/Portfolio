@@ -1,60 +1,15 @@
 "use client";
 import TitleOnHover from "@/components/decoration/TitleOnHover";
+import { PROJECTS } from "@/utils/constants";
 import Image from "next/image";
 import { useState } from "react";
-
-interface Project {
-  count: string;
-  title: string;
-  description: string;
-  image: string;
-  liveLink: string;
-  githubLink: string;
-  githubAPILink?: string;
-  techs: string[];
-}
-
-const PROJECTS: Project[] = [
-  {
-    count: "01",
-    title: "PrayerTimes",
-    description:
-      "An application to PrayerTimes is a simple web app that displays accurate daily prayer times for Muslims based on their location.",
-    image: "https://via.placeholder.com/",
-    liveLink: "https://prayertimesv1.netlify.app/",
-    githubLink: "https://github.com/MAHMOUDGAD123/PrayerTimes",
-    techs: ["HTML5", "CSS3", "JavaScript"],
-  },
-  {
-    count: "02",
-    title: "EGPrices",
-    description:
-      "EGPrices is a web app that provides real-time updates on gold, silver, and Egyptian pound (EGP) currency rates.",
-    image: "https://via.placeholder.com/150",
-    liveLink: "https://egypt-prices.netlify.app/",
-    githubLink: "https://github.com/MAHMOUDGAD123/EG_Prices",
-    githubAPILink: "https://github.com/MAHMOUDGAD123/egPricesApi",
-    techs: ["HTML5", "CSS3", "JavaScript", "NodeJs", "ExpressJs", "cheerio"],
-  },
-  {
-    count: "03",
-    title: "VIDL",
-    description:
-      "VIDL is a video downloader web app that lets users download videos and entire YouTube playlists.",
-    image: "https://via.placeholder.com/150",
-    liveLink: "https://vidl-client.vercel.app/",
-    githubLink: "https://github.com/MAHMOUDGAD123/vidl-client",
-    githubAPILink: "https://github.com/MAHMOUDGAD123/vidl-api",
-    techs: ["ReactJs", "React Router", "NodeJs", "ExpressJs", "Vite"],
-  },
-];
 
 export default function WorkContent() {
   const [activeProject, setActiveProject] = useState<number>(0);
 
   return (
     <div className="relative flex w-full flex-col gap-[20px]">
-      <div className="absolute right-0 top-[-35px] flex animate-fadeIn gap-[25px] self-center text-[35px] text-dodgerblue *:cursor-pointer *:opacity-50 *:transition-opacity hover:*:opacity-100 motion-reduce:animate-none max-_xl:right-auto max-_xl:static max-_xl:mb-[30px]">
+      <div className="absolute right-0 top-[-35px] flex animate-fadeIn gap-[25px] self-center text-[35px] text-dodgerblue *:cursor-pointer *:opacity-50 *:transition-opacity hover:*:opacity-100 motion-reduce:animate-none max-_xl:static max-_xl:right-auto max-_xl:mb-[30px]">
         <i
           className="fa-solid fa-circle-chevron-left"
           onClick={() =>

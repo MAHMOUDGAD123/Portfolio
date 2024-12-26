@@ -13,6 +13,11 @@ const education: EducationType[] = [
     at: "Mansourah University",
   },
   {
+    fromTo: "2023",
+    title: "Programming With C++",
+    at: "Programmingadvices.com",
+  },
+  {
     fromTo: "2024",
     title: "Web Development",
     at: "Youtube - Docs",

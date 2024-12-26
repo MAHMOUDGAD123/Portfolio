@@ -4,7 +4,7 @@ const aboutLinks: { text: string; href: string }[] = [
   { text: "Journey", href: "/about" },
   { text: "Education", href: "/about/education" },
   { text: "Skills", href: "/about/skills" },
-  { text: "Contact", href: "/about/contact" },
+  // { text: "Contact", href: "/about/contact" },
 ];
 
 export default function AboutNav() {

@@ -10,15 +10,15 @@ interface Props {
   children: React.ReactNode;
   journey: React.ReactNode;
   education: React.ReactNode;
-  contact: React.ReactNode;
   skills: React.ReactNode;
+  // contact: React.ReactNode;
 }
 
 export default function AboutLayout({
   children,
   education,
   journey,
-  contact,
+  // contact,
   skills,
 }: Props) {
   return (
@@ -26,9 +26,9 @@ export default function AboutLayout({
       {children}
       <AboutContent
         journey={journey}
-        contact={contact}
         skills={skills}
         education={education}
+        // contact={contact}
       />
     </PageHolder>
   );

@@ -45,7 +45,7 @@ export default function MGCard() {
             >
               <i className="fa-brands fa-linkedin"></i>
             </a>
-            <Link href="/about/contact">
+            <Link href="/contact">
               <i className="fa-brands fa-whatsapp"></i>
             </Link>
           </div>

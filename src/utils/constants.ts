@@ -1,9 +1,12 @@
+import { getDuration } from "./tools";
+
+export const EXPERIENCE_DURATION = getDuration("2024-02-01");
+
 export interface LinksType {
   href: string;
   name: string;
   iconClass: string;
 }
-
 export const NAV_LINKS: LinksType[] = [
   {
     href: "/",
@@ -19,5 +22,67 @@ export const NAV_LINKS: LinksType[] = [
     href: "/work",
     name: "Work",
     iconClass: "fa-solid fa-briefcase",
+  },
+  {
+    href: "/contact",
+    name: "Contact",
+    iconClass: "fa-solid fa-envelope",
+  },
+];
+
+export const SKILLS: string[] = [
+  "HTML5",
+  "CSS3",
+  "Javascript",
+  "Typescript",
+  "NodeJs",
+  "ReactJs",
+  "NextJs",
+  "ReactRouter",
+  "TailwindCSS",
+];
+
+interface Project {
+  count: string;
+  title: string;
+  description: string;
+  image: string;
+  liveLink: string;
+  githubLink: string;
+  githubAPILink?: string;
+  techs: string[];
+}
+export const PROJECTS: Project[] = [
+  {
+    count: "01",
+    title: "PrayerTimes",
+    description:
+      "An application to PrayerTimes is a simple web app that displays accurate daily prayer times for Muslims based on their location.",
+    image: "https://via.placeholder.com/",
+    liveLink: "https://prayertimesv1.netlify.app/",
+    githubLink: "https://github.com/MAHMOUDGAD123/PrayerTimes",
+    techs: ["HTML5", "CSS3", "JavaScript"],
+  },
+  {
+    count: "02",
+    title: "EGPrices",
+    description:
+      "EGPrices is a web app that provides real-time updates on gold, silver, and Egyptian pound (EGP) currency rates.",
+    image: "https://via.placeholder.com/150",
+    liveLink: "https://egypt-prices.netlify.app/",
+    githubLink: "https://github.com/MAHMOUDGAD123/EG_Prices",
+    githubAPILink: "https://github.com/MAHMOUDGAD123/egPricesApi",
+    techs: ["HTML5", "CSS3", "JavaScript", "NodeJs", "ExpressJs", "cheerio"],
+  },
+  {
+    count: "03",
+    title: "VIDL",
+    description:
+      "VIDL is a video downloader web app that lets users download videos and entire YouTube playlists.",
+    image: "https://via.placeholder.com/150",
+    liveLink: "https://vidl-client.vercel.app/",
+    githubLink: "https://github.com/MAHMOUDGAD123/vidl-client",
+    githubAPILink: "https://github.com/MAHMOUDGAD123/vidl-api",
+    techs: ["ReactJs", "React Router", "NodeJs", "ExpressJs", "Vite"],
   },
 ];
