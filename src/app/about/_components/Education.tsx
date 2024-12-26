@@ -15,7 +15,7 @@ const education: EducationType[] = [
   {
     fromTo: "2023",
     title: "Programming With C++",
-    at: "Programmingadvices.com",
+    at: "ProgrammingAdvices.com",
   },
   {
     fromTo: "2024",
