@@ -74,7 +74,8 @@ export default function ContactMeForm() {
 
       setCanSend(false);
     }
-  }, [state, canSend]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state]);
 
   return (
     <form
