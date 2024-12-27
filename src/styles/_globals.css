@@ -95,9 +95,9 @@ textarea {
     box-shadow: 0 0 0 3px var(--prm-col-1);
   }
 
-  /* &:user-invalid {
+  &:user-invalid {
     animation: outline-blink 5s ease-in-out infinite;
-  } */
+  }
 }
 
 /* Animaiton Keyframes Start */
