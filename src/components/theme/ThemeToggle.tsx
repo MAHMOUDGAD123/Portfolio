@@ -4,6 +4,7 @@ import { useStateLs } from "@/utils/hooks/useStateLs";
 import { useLayoutEffect } from "react";
 
 export default function ThemeToggle() {
+  console.log("Theme Render");
   const localStorageKey = "__MG_theme__";
   const [theme, setTheme] = useStateLs(localStorageKey, "system");
 

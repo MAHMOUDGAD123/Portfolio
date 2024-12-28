@@ -85,7 +85,6 @@ export default function WorkContent() {
             alt={`Project ${PROJECTS[activeProject].count}`}
             width={250}
             height={250}
-            objectFit="cover"
           />
         </div>
       </div>

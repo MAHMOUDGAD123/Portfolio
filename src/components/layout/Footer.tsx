@@ -1,4 +1,4 @@
-import ThemeToggle from "../theme/ThemeToggle";
+import ThemeHolder from "../theme/ThemeHolder";
 
 export default function Footer() {
   return (
@@ -24,7 +24,7 @@ export default function Footer() {
         />
       </svg>
 
-      <ThemeToggle />
+      <ThemeHolder />
     </footer>
   );
 }
