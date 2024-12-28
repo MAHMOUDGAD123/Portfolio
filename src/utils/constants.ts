@@ -86,3 +86,9 @@ export const PROJECTS: Project[] = [
     techs: ["ReactJs", "React Router", "NodeJs", "ExpressJs", "Vite"],
   },
 ];
+
+export const themesMap = new Map([
+  ["light", { cssValue: "light", icon: "fa-sun" }],
+  ["system", { cssValue: "dark light", icon: "fa-desktop" }],
+  ["dark", { cssValue: "dark", icon: "fa-moon" }],
+]);
