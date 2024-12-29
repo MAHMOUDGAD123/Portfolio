@@ -4,7 +4,13 @@ type useStateLSType<T> = [T, React.Dispatch<React.SetStateAction<T>>];
 
 // helper function
 const getStoredValue = <T>(key: string, defaultValue: T): T => {
-  return JSON.parse(localStorage.getItem(key)!) ?? defaultValue;
+  // use try catch to handle localStorage undefined on first load on server
+  try {
+    return JSON.parse(localStorage.getItem(key)!) ?? defaultValue;
+  } catch (error) {
+    console.log(error);
+    return defaultValue;
+  }
 };
 
 /** a custom useState to store the state in the localStorage */

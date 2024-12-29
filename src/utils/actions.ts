@@ -11,7 +11,6 @@ export interface ContactMeActionType {
     [key: string]: string[] | undefined;
   };
 }
-
 export const contactMeAction = async (
   _prevState: ContactMeActionType,
   formData: FormData,

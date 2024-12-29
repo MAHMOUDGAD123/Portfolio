@@ -28,6 +28,7 @@ export default {
         litTxtCol: "#171717",
         seclitbg: "#eeeeee",
         secdrkbg: "#222222",
+        itembg: "light-dark(#eee,#222)",
       },
       backgroundImage: {
         gradient: "linear-gradient(to right, #1e90ff, var(--text-col))",

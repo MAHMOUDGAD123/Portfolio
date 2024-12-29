@@ -1,26 +1,23 @@
 "use client";
-import { themesMap } from "@/utils/constants";
-import { useStateLs } from "@/utils/hooks/useStateLs";
-import { useLayoutEffect } from "react";
+import { THEME_KEY, themesMap } from "@/utils/constants";
+import TitleOnHover from "../decoration/TitleOnHover";
+import { useTheme } from "@/utils/hooks/theme/useTheme";
 
 export default function ThemeToggle() {
-  console.log("Theme Render");
-  const localStorageKey = "__MG_theme__";
-  const [theme, setTheme] = useStateLs(localStorageKey, "system");
+  const [theme, setTheme, mounted] = useTheme(THEME_KEY, "system");
 
-  useLayoutEffect(() => {
-    document.documentElement.style.colorScheme = themesMap.get(theme)!.cssValue;
-  }, [theme]);
+  if (!mounted) return null;
 
   return (
-    <div className="flex items-center gap-[10px] rounded-full border-[1px] border-solid border-[#77777755] p-[7px_10px] text-[14px] *:cursor-pointer *:opacity-50 *:transition-opacity hover:*:opacity-100">
+    <div className="flex items-center gap-[5px] rounded-full border-[1px] border-solid border-[#77777770] p-[2px] text-[14px] *:cursor-pointer *:opacity-75 *:transition-opacity hover:*:opacity-100">
       {[...themesMap.entries()].map(([key, { icon }]) => {
+        const style = `w-[32px] flex items-center justify-center aspect-square rounded-full${theme === key ? " text-dodgerblue bg-[light-dark(#00000050,#ffffff50)]" : ""}`;
         return (
-          <i
-            className={`${theme === key ? "text-dodgerblue" : ""} fa-solid ${icon}`}
-            key={key}
-            onClick={() => setTheme(key)}
-          ></i>
+          <TitleOnHover key={key} title={key.toUpperCase()}>
+            <span className={style} onClick={() => setTheme(key)}>
+              <i className={`fa-solid ${icon}`}></i>
+            </span>
+          </TitleOnHover>
         );
       })}
     </div>

@@ -87,8 +87,18 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-export const themesMap = new Map([
+// theme related constants
+export const THEME_KEY = "__MG_theme__" as const;
+export type ThemeType = "light" | "system" | "dark";
+export type ColorSchemeType = "light" | "dark" | "light dark";
+export const themesMap = new Map<
+  ThemeType,
+  {
+    cssValue: ColorSchemeType;
+    icon: string;
+  }
+>([
   ["light", { cssValue: "light", icon: "fa-sun" }],
-  ["system", { cssValue: "dark light", icon: "fa-desktop" }],
+  ["system", { cssValue: "light dark", icon: "fa-desktop" }],
   ["dark", { cssValue: "dark", icon: "fa-moon" }],
 ]);

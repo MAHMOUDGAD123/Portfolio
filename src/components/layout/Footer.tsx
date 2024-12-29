@@ -1,6 +1,6 @@
-import ThemeHolder from "../theme/ThemeHolder";
+import ThemeToggle from "../theme/ThemeToggle";
 
-export default function Footer() {
+export default async function Footer() {
   return (
     <footer className="flex flex-col items-center justify-center py-[5px]">
       <p className="text-[10px] opacity-50">Powered By</p>
@@ -24,7 +24,7 @@ export default function Footer() {
         />
       </svg>
 
-      <ThemeHolder />
+      <ThemeToggle />
     </footer>
   );
 }
