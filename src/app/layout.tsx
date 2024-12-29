@@ -42,9 +42,6 @@ export default async function RootLayout({
       lang="en"
       className={`${robotoMono.variable} ${sairaStencilOne.variable}`}
     >
-      <head>
-        <script src="/theme.js" />{/* eslint-disable-line */}
-      </head>
       <body className="mx-auto w-[900px] animate-fadeIn opacity-0 motion-reduce:animate-none motion-reduce:opacity-100 max-_3xl:max-w-[800px] max-_2xl:max-w-[750px] max-_xl:max-w-[500px] max-_lg:max-w-[400px] max-_md:max-w-[300px] max-_sm:max-w-[240px] max-_usm:max-w-[195px]">
         <Header />
         <main className="relative min-h-[--main-height] w-full">

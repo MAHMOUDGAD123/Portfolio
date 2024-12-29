@@ -6,11 +6,6 @@
     ["system", "light dark"],
     ["dark", "dark"],
   ]);
-  const colorScheme = themesMap.get(
-    document.cookie
-      .split(";")
-      .find((c) => c.includes(key))
-      ?.split("=")[1],
-  );
+  const colorScheme = themesMap.get(JSON.parse(localStorage.getItem(key)));
   document.documentElement.style.colorScheme = colorScheme || "light dark";
 })();

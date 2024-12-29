@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { themesMap, type ThemeType } from "../../constants";
-import { getClientCookieTheme } from "./CSCookie";
+import { themesMap, type ThemeType } from "../constants";
+import { useStateLs } from "./useStateLs";
 
-type useStateLSType = [
+export type UseStateLSType = [
   ThemeType,
   React.Dispatch<React.SetStateAction<ThemeType>>,
   boolean,
@@ -12,11 +12,9 @@ type useStateLSType = [
 export const useTheme = (
   key: string,
   defaultValue: ThemeType,
-): useStateLSType => {
-  const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState(
-    () => getClientCookieTheme(key) || defaultValue,
-  );
+): UseStateLSType => {
+  const [mounted, setMounted] = useState(() => false);
+  const [theme, setTheme] = useStateLs(key, defaultValue);
 
   useEffect(() => {
     setMounted(true);
@@ -24,7 +22,6 @@ export const useTheme = (
 
   useEffect(() => {
     document.documentElement.style.colorScheme = themesMap.get(theme)!.cssValue;
-    document.cookie = `${key}=${theme};path=/;max-age=31536000;`;
   }, [theme, key]);
 
   return [theme, setTheme, mounted];
