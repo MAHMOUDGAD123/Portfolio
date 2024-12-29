@@ -1,4 +1,5 @@
 (async () => {
+  // this script is used to stop theme flickering on page load
   const key = "__MG_theme__";
   const themesMap = new Map([
     ["light", "light"],
