@@ -52,7 +52,7 @@ type KeyValue = {
 type RepoType = KeyValue & { name: string };
 
 export const getGithubCommitCount = async () => {
-  const fakeTotle = 245;
+  const fakeTotle = 255;
 
   if (process.env.NODE_ENV == "development") {
     return fakeTotle;

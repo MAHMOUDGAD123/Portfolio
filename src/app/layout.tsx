@@ -7,8 +7,6 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Script from "next/script";
 import SpinnerDecore from "@/components/decoration/SpinnerDecore";
-import { THEME_KEY, themesMap } from "@/utils/constants";
-import { getServerCookieTheme } from "@/utils/hooks/theme/SSCookie";
 
 const robotoMono = localFont({
   src: "../fonts/RobotoMono.woff2",
@@ -37,21 +35,15 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // to avoid theme flickering on page load
-  // we need to set the colorScheme value on the html tag
-  // [1] get the theme value from cookies
-  const themeValue = await getServerCookieTheme(THEME_KEY);
-  // [2] get the cssValue of the theme
-  const colorScheme = themesMap.get(themeValue)?.cssValue;
-
   return (
     <html
+      suppressHydrationWarning
       lang="en"
       className={`${robotoMono.variable} ${sairaStencilOne.variable}`}
-      style={{
-        colorScheme: colorScheme,
-      }}
     >
+      <head>
+        <script src="/theme.js" /> {/*eslint-disable-line*/}
+      </head>
       <body className="mx-auto w-[900px] animate-fadeIn opacity-0 motion-reduce:animate-none motion-reduce:opacity-100 max-_3xl:max-w-[800px] max-_2xl:max-w-[750px] max-_xl:max-w-[500px] max-_lg:max-w-[400px] max-_md:max-w-[300px] max-_sm:max-w-[240px] max-_usm:max-w-[195px]">
         <Header />
         <main className="relative min-h-[--main-height] w-full">
@@ -74,7 +66,7 @@ export default async function RootLayout({
           strokeOpacity={0.2}
         />
 
-        <Script src="/scripts.js" strategy="lazyOnload" />
+        <Script src="/scroll.js" strategy="lazyOnload" />
       </body>
     </html>
   );

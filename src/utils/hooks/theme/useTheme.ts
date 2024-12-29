@@ -18,7 +18,9 @@ export const useTheme = (
     () => getClientCookieTheme(key) || defaultValue,
   );
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     document.documentElement.style.colorScheme = themesMap.get(theme)!.cssValue;
