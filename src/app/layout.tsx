@@ -7,7 +7,6 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Script from "next/script";
 import SpinnerDecore from "@/components/decoration/SpinnerDecore";
-import Head from "next/head";
 
 const robotoMono = localFont({
   src: "../fonts/RobotoMono.woff2",
