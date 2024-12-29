@@ -13,8 +13,16 @@ export default function ThemeProvider({
   return (
     <ThemeContext value={useTheme(THEME_KEY, "system")}>
       {children}
-      {/* eslint-disable-next-line */}
-      <script src="/theme.js" />
     </ThemeContext>
   );
 }
+
+/**
+ * This is a simple context provider that wraps the children with the useTheme hook.
+ * you can also add this code to the head of the document (RootLayout) to avoid theme flickering on page load:
+ *
+ * <head>
+ *  // eslint-disable-next-line
+ *  <script src="/theme.js" />
+ * </head>
+ */
