@@ -11,6 +11,5 @@
       .find((c) => c.includes(key))
       ?.split("=")[1],
   );
-  console.log(colorScheme);
   document.documentElement.style.colorScheme = colorScheme || "light dark";
 })();
