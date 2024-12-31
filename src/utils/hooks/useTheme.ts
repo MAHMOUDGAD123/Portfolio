@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext } from "react";
 import { themesMap, type ThemeType } from "../constants";
 import { useStateLs } from "./useStateLs";
 
@@ -7,6 +7,8 @@ export type UseStateLSType = [
   React.Dispatch<React.SetStateAction<ThemeType>>,
   boolean,
 ];
+
+export const ThemeContext = createContext<UseStateLSType | null>(null);
 
 /** a custom useState to store the state in the localStorage */
 export const useTheme = (

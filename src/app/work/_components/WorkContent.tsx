@@ -80,11 +80,11 @@ export default function WorkContent() {
         <div className="flex w-full animate-settleRight items-center justify-center rounded-[10px] motion-reduce:animate-none">
           <Image
             loading="eager"
-            priority={true}
             src={`/imgs/${PROJECTS[activeProject].title}.png`}
             alt={`Project ${PROJECTS[activeProject].count}`}
             width={250}
             height={250}
+            priority
           />
         </div>
       </div>

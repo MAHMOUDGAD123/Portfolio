@@ -2,7 +2,7 @@
 import { useContext } from "react";
 import { themesMap } from "@/utils/constants";
 import TitleOnHover from "../decoration/TitleOnHover";
-import { ThemeContext } from "./ThemeProvider";
+import { ThemeContext } from "@/utils/hooks/useTheme";
 
 export default function ThemeToggle() {
   const [theme, setTheme, mounted] = useContext(ThemeContext)!;
