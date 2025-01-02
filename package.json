@@ -5,12 +5,11 @@
   "private": true,
   "scripts": {
     "dev": "npm run clean && next dev --turbopack -p 3579",
-    "build:dev": "npm run clean && next build",
-    "start:dev": "npm run clean && npm run build && next start -p 3579",
+    "start:dev": "next start -p 3579",
+    "clean": "rimraf ./.next",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clean": "rimraf ./.next",
     "test:chrome": "npx playwright test --headed --browser=chromium",
     "test:firefox": "npx playwright test --headed --browser=firefox",
     "test:safari": "npx playwright test --headed --browser=webkit"

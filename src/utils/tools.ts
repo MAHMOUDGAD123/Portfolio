@@ -2,20 +2,27 @@ export const waitFor = (ms: number) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
-export const getDuration = (sinceDate: string) => {
+export const getDuration = (sinceDate: string | Date) => {
   const since = new Date(sinceDate);
   const now = new Date();
   const diff = new Date(now.getTime() - since.getTime());
 
+  if (diff.getTime() < 0) {
+    return { count: 0, label: "back to the future" };
+  }
+
   const finalData = (count: number, label: string) => {
-    return { count, label: count === 1 ? label : `${label}s` };
+    return { count, label: count >>> 0 > 1 ? `${label}s` : label };
   };
 
   const years = diff.getUTCFullYear() - 1970;
-  if (years > 0) return finalData(years, "year");
-
   const months = diff.getUTCMonth();
-  if (months > 0) return finalData(months, "month");
+
+  if (years > 0) {
+    return finalData(+(years + months / 12).toFixed(2), "year");
+  } else if (months > 0) {
+    return finalData(months, "month");
+  }
 
   let days = diff.getUTCDate();
   if (days > 1) {
@@ -43,42 +50,4 @@ export const getDuration = (sinceDate: string) => {
   if (seconds > 0) return finalData(seconds, "second");
 
   return { count: 0, label: "just now" };
-};
-
-type KeyValue = {
-  [key: string]: unknown;
-};
-
-type RepoType = KeyValue & { name: string };
-
-export const getGithubCommitCount = async () => {
-  const fakeTotle = 255;
-
-  if (process.env.NODE_ENV == "development") {
-    return fakeTotle;
-  }
-
-  try {
-    const res = await fetch(
-      "https://api.github.com/users/MAHMOUDGAD123/repos",
-      {
-        next: {
-          revalidate: 60 * 60 * 24 * 7, // a week
-        },
-      },
-    );
-    const repos: RepoType[] = await res.json();
-    let count = 0;
-    for (const repo of repos) {
-      const commitsRes = await fetch(
-        `https://api.github.com/repos/MAHMOUDGAD123/${repo.name}/commits`,
-      );
-      const commits: KeyValue[] = await commitsRes.json();
-      count += commits.length;
-    }
-    return count;
-  } catch (err) {
-    console.log((err as Error).message);
-    return fakeTotle;
-  }
 };

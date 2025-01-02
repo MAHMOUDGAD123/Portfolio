@@ -7,8 +7,8 @@ const getStoredValue = <T>(key: string, defaultValue: T): T => {
   // use try catch to handle localStorage undefined on first load on server
   try {
     return JSON.parse(localStorage.getItem(key)!) ?? defaultValue;
+    // eslint-disable-next-line
   } catch (error) {
-    console.log(error);
     return defaultValue;
   }
 };

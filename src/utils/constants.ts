@@ -1,6 +1,4 @@
-import { getDuration } from "./tools";
-
-export const EXPERIENCE_DURATION = getDuration("2024-02-01");
+export const CAREER_START_DATE = "2024-01-01";
 
 export interface LinksType {
   href: string;

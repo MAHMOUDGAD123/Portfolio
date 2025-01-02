@@ -12,7 +12,7 @@ export default function IncrementalStatistic({ total, title }: Props) {
 
   useEffect(() => {
     (async () => {
-      if (counter >= total) return;
+      if (counter >= total >>> 0) return;
       const diff = total - counter;
       await waitFor(
         (() => {
@@ -45,9 +45,10 @@ export default function IncrementalStatistic({ total, title }: Props) {
   }, [counter, total]);
 
   return (
-    <div className="flex items-center gap-2">
-      <div className="text-[45px] font-extrabold max-_md:text-[39px]">
+    <div className="flex items-center gap-2" title={total.toString()}>
+      <div className="flex items-center text-[45px] font-extrabold max-_md:text-[39px]">
         {counter}
+        {total >>> 0 !== total && <span className="text-[27px]">+</span>}
       </div>
       <div className="text-[12px] opacity-70">
         {title.split("|").map((text, i) => (
