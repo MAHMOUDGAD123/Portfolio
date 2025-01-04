@@ -59,7 +59,7 @@ export const PROJECTS: Project[] = [
     image: "https://via.placeholder.com/",
     liveLink: "https://prayertimesv1.netlify.app/",
     githubLink: "https://github.com/MAHMOUDGAD123/PrayerTimes",
-    techs: ["HTML5", "CSS3", "JavaScript"],
+    techs: ["HTML5", "CSS3", "JavaScript", "esbuild"],
   },
   {
     count: "02",
@@ -70,7 +70,15 @@ export const PROJECTS: Project[] = [
     liveLink: "https://egypt-prices.netlify.app/",
     githubLink: "https://github.com/MAHMOUDGAD123/EG_Prices",
     githubAPILink: "https://github.com/MAHMOUDGAD123/egPricesApi",
-    techs: ["HTML5", "CSS3", "JavaScript", "NodeJs", "ExpressJs", "cheerio"],
+    techs: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "NodeJs",
+      "ExpressJs",
+      "cheerio",
+      "esbuild",
+    ],
   },
   {
     count: "03",

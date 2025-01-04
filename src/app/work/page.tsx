@@ -42,7 +42,7 @@ export default function Work() {
 
       <WorkContent />
 
-      <IconSlider iconList={iconList} duration={15} height={150} />
+      <IconSlider iconList={iconList} duration={25} width={1500} height={150} />
     </PageHolder>
   );
 }
