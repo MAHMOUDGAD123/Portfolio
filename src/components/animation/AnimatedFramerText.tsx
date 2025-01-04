@@ -1,4 +1,4 @@
-import "../../styles/animatedFramerText.css";
+import "../../styles/animated-framer-text.css";
 
 interface Props {
   text: string;

@@ -1,5 +1,5 @@
 "use client";
-import "../../styles/mainNav.css";
+import "../../styles/main-nav.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAV_LINKS } from "@/utils/constants";

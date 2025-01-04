@@ -55,7 +55,7 @@ export const PROJECTS: Project[] = [
     count: "01",
     title: "PrayerTimes",
     description:
-      "An application to PrayerTimes is a simple web app that displays accurate daily prayer times for Muslims based on their location.",
+      "PrayerTimes is a simple web app that displays accurate daily prayer times for Muslims based on their location.",
     image: "https://via.placeholder.com/",
     liveLink: "https://prayertimesv1.netlify.app/",
     githubLink: "https://github.com/MAHMOUDGAD123/PrayerTimes",

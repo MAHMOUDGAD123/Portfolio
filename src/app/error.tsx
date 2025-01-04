@@ -1,5 +1,5 @@
 "use client";
-import "../styles/errorRoot.css";
+import "../styles/error-root.css";
 import type { Metadata } from "next/types";
 import { useRouter } from "next/navigation";
 

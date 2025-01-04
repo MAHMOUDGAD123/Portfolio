@@ -1,4 +1,4 @@
-import "../../styles/titleOnHover.css";
+import "../../styles/title-on-hover.css";
 
 interface Props {
   children: React.ReactNode;

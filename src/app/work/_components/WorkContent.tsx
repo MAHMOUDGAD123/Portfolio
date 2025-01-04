@@ -25,7 +25,7 @@ export default function WorkContent() {
       </div>
 
       <div className="flex h-full w-full items-center justify-center gap-[50px] *:flex-1 max-_xl:flex-col max-_xl:text-center">
-        <div className="flex animate-settleLeft flex-col motion-reduce:animate-none max-_xl:*:place-content-center">
+        <div className="flex min-h-[410px] animate-settleLeft flex-col motion-reduce:animate-none max-_xl:*:place-content-center">
           <span
             className="font-saira text-[70px] text-transparent"
             style={{

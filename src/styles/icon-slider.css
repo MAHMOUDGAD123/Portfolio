@@ -1,0 +1,51 @@
+.image-slider {
+  width: 100%;
+  overflow: hidden;
+  overflow: hidden;
+  margin-top: 35px;
+  mask-image: linear-gradient(
+    to right,
+    transparent 10%,
+    black,
+    transparent 90%
+  );
+
+  & > .list {
+    left: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    left: 50%;
+    translate: -50% 0;
+
+    &:hover {
+      & > .icon-slider-item {
+        animation-play-state: paused;
+      }
+    }
+
+    & > .icon-slider-item {
+      position: absolute;
+      filter: grayscale(100%);
+      color: var(--prm-col-1);
+      transition: filter var(--trans-dur);
+      animation: slide infinite linear;
+      left: 100%;
+
+      &:hover {
+        filter: grayscale(0%);
+      }
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: calc(0%);
+    translate: -100% 0;
+  }
+}

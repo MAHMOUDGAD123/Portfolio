@@ -1,5 +1,5 @@
 "use client";
-import "../../styles/animatedTextList.css";
+import "../../styles/animated-text-list.css";
 import { useEffect, useRef } from "react";
 
 interface Props {
