@@ -9,11 +9,12 @@ interface Props {
 
 export default function IncrementalStatistic({ total, title }: Props) {
   const [counter, setCounter] = useState<number>(0);
+  const intTotal = total >>> 0;
 
   useEffect(() => {
     (async () => {
-      if (counter >= total >>> 0) return;
-      const diff = total - counter;
+      if (counter >= intTotal) return;
+      const diff = intTotal - counter;
       await waitFor(
         (() => {
           switch (diff) {
@@ -42,13 +43,13 @@ export default function IncrementalStatistic({ total, title }: Props) {
       );
       setCounter((c) => c + 1);
     })();
-  }, [counter, total]);
+  }, [counter, total, intTotal]);
 
   return (
     <div className="flex items-center gap-2" title={total.toString()}>
       <div className="flex items-center text-[45px] font-extrabold max-_md:text-[39px]">
         {counter}
-        {total >>> 0 !== total && <span className="text-[27px]">+</span>}
+        {intTotal !== total && <span className="text-[27px]">+</span>}
       </div>
       <div className="text-[12px] opacity-70">
         {title.split("|").map((text, i) => (
