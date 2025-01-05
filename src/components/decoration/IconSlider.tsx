@@ -5,6 +5,8 @@ interface Props {
   duration: number;
   width?: number;
   height?: number;
+  marginTop?: number;
+  marginBottom?: number;
 }
 // icon-slider component
 export default function IconSlider({
@@ -12,11 +14,20 @@ export default function IconSlider({
   width,
   height,
   duration,
+  marginTop,
+  marginBottom,
 }: Props) {
   const timeDistance = duration / iconList.length;
 
   return (
-    <div className="image-slider" style={{ height: height || 100 }}>
+    <div
+      className="image-slider"
+      style={{
+        height: height || 100,
+        marginTop,
+        marginBottom,
+      }}
+    >
       <div
         className="list"
         style={{
@@ -29,7 +40,7 @@ export default function IconSlider({
             className="icon-slider-item"
             style={{
               animationDuration: `${duration}s`,
-              animationDelay: `${timeDistance * i}s`,
+              animationDelay: `${timeDistance * i * -1}s`,
             }}
           >
             {icon}

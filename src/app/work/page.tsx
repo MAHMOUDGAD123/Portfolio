@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import IconSlider from "@/components/decoration/IconSlider";
 import {
   CSS3,
+  EsBuild,
   GitHub,
   HTML5,
   Javascript,
@@ -35,14 +36,21 @@ export default function Work() {
     <ReactRouter D={iconSize} key={8} />,
     <GitHub D={iconSize} key={9} />,
     <Vite D={iconSize} key={10} />,
+    <EsBuild D={iconSize} key={11} />,
   ];
   return (
     <PageHolder>
       <ContentTitle title="SOME WORK" />
 
-      <WorkContent />
+      <IconSlider
+        iconList={iconList}
+        duration={25}
+        width={1500}
+        marginBottom={60}
+        height={70}
+      />
 
-      <IconSlider iconList={iconList} duration={25} width={1500} height={150} />
+      <WorkContent />
     </PageHolder>
   );
 }

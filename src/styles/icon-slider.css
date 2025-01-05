@@ -1,8 +1,6 @@
 .image-slider {
   width: 100%;
-  overflow: hidden;
-  overflow: hidden;
-  margin-top: 35px;
+  overflow-x: hidden;
   mask-image: linear-gradient(
     to right,
     transparent 10%,
@@ -19,13 +17,13 @@
     left: 50%;
     translate: -50% 0;
 
-    &:hover {
+    &:has(> .icon-slider-item:hover) {
       & > .icon-slider-item {
         animation-play-state: paused;
       }
     }
 
-    & > .icon-slider-item {
+    & .icon-slider-item {
       position: absolute;
       filter: grayscale(100%);
       color: var(--prm-col-1);
