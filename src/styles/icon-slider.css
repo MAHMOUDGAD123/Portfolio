@@ -38,6 +38,12 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .image-slider {
+    display: none;
+  }
+}
+
 @keyframes slide {
   0% {
     left: 100%;

@@ -1,7 +1,7 @@
 import "../../styles/icon-slider.css";
 
 interface Props {
-  iconList: React.ReactNode[];
+  iconList: [React.ReactNode, string][];
   duration: number;
   width?: number;
   height?: number;
@@ -34,8 +34,9 @@ export default function IconSlider({
           width: width || 1000,
         }}
       >
-        {iconList.map((icon, i) => (
+        {iconList.map(([icon, name], i) => (
           <div
+            title={name}
             key={i}
             className="icon-slider-item"
             style={{

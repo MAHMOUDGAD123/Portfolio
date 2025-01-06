@@ -24,33 +24,34 @@ export const metadata: Metadata = {
 
 export default function Work() {
   const iconSize = 55;
-  const iconList = [
-    <HTML5 D={iconSize} key={0} />,
-    <CSS3 D={iconSize} key={1} />,
-    <Javascript D={iconSize} key={2} />,
-    <Typescript D={iconSize} key={3} />,
-    <NodeJs D={iconSize} key={4} />,
-    <ReactJs D={iconSize} key={5} />,
-    <NextJs D={iconSize} key={6} />,
-    <TailwindCss D={iconSize} key={7} />,
-    <ReactRouter D={iconSize} key={8} />,
-    <GitHub D={iconSize} key={9} />,
-    <Vite D={iconSize} key={10} />,
-    <EsBuild D={iconSize} key={11} />,
+  const iconList: [React.ReactNode, string][] = [
+    [<HTML5 D={iconSize} key={0} />, "HTML5"],
+    [<CSS3 D={iconSize} key={1} />, "CSS3"],
+    [<Javascript D={iconSize} key={2} />, "JavaScript"],
+    [<Typescript D={iconSize} key={3} />, "TypeScript"],
+    [<NodeJs D={iconSize} key={4} />, "NodeJS"],
+    [<ReactJs D={iconSize} key={5} />, "ReactJS"],
+    [<NextJs D={iconSize} key={6} />, "NextJS"],
+    [<TailwindCss D={iconSize} key={7} />, "TailwindCSS"],
+    [<ReactRouter D={iconSize} key={8} />, "React Router"],
+    [<GitHub D={iconSize} key={9} />, "GitHub"],
+    [<Vite D={iconSize} key={10} />, "Vite"],
+    [<EsBuild D={iconSize} key={11} />, "ESBuild"],
   ];
   return (
     <PageHolder>
       <ContentTitle title="SOME WORK" />
 
+      <WorkContent />
+
       <IconSlider
         iconList={iconList}
         duration={25}
         width={1500}
-        marginBottom={60}
         height={70}
+        marginTop={50}
+        marginBottom={10}
       />
-
-      <WorkContent />
     </PageHolder>
   );
 }
