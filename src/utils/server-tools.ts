@@ -30,7 +30,7 @@ export const getGithubCommitCount = async () => {
         `https://api.github.com/repos/MAHMOUDGAD123/${repo.name}/commits`,
       );
       const commits: KeyValue[] = await commitsRes.json();
-      count += commits.length;
+      count += commits.length || 0;
     }
     return count;
   } catch (err) {
