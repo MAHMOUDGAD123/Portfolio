@@ -1,3 +1,6 @@
+export const CV_URL =
+  "https://www.canva.com/design/DAGaHvR1wns/DMFxm8CSmKTY0dsg3PlcOA/view?utm_content=DAGaHvR1wns&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0ba4a2834e";
+
 export const CAREER_START_DATE = "2024-01-01";
 
 export interface LinksType {
