@@ -10,4 +10,4 @@ const OnWindowScroll = async () => {
   }
 };
 OnWindowScroll();
-window.addEventListener("scrollend", OnWindowScroll, false);
+window.addEventListener("scroll", OnWindowScroll, false);
