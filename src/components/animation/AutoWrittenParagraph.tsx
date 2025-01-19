@@ -54,7 +54,7 @@ export default function AutoWrittenParagraph({
     // [2] split the (paragraph) into chars
     splittedParagraph.current = paragraph.split("");
     setIsWriting(true);
-  }, [isDone, paragraph]);
+  }, [isDone, paragraph, sessionStorageKey, cleanNodes, updateNodes]);
 
   useEffect(() => {
     if (isDone || !isWriting) return;
@@ -91,6 +91,7 @@ export default function AutoWrittenParagraph({
     index,
     isDone,
     paragraph,
+    sessionStorageKey,
     updateDone,
     updateLastIndex,
     updateNodes,
