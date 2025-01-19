@@ -46,7 +46,7 @@ export default function IncrementalStatistic({ total, title }: Props) {
   }, [counter, total, intTotal]);
 
   return (
-    <div className="flex items-center gap-2" title={total.toString()}>
+    <div className="flex items-center gap-2">
       <div className="flex items-center text-[45px] font-extrabold max-_md:text-[39px]">
         {counter}
         {intTotal !== total && <span className="text-[27px]">+</span>}

@@ -17,11 +17,12 @@ const initialState: JourneyParagraphStateContextType = {
   nodes: [],
 };
 
-export const JourneyParagraphStateContext = createContext<{
-  journeyParagraphState: JourneyParagraphStateContextType;
+export const ParagraphStateContext = createContext<{
+  paragraphState: JourneyParagraphStateContextType;
   updateNodes: (newNode: ReactNode) => void;
   updateDone: (value: boolean) => void;
   updateLastIndex: (newIndex: number) => void;
+  cleanNodes: () => void;
 } | null>(null);
 // Journey Context End
 
@@ -46,6 +47,13 @@ export default function AboutContent({
     updateJourneyParagraphState((state) => ({
       ...state,
       nodes: [...state.nodes, newNode],
+    }));
+  }, []);
+
+  const cleanNodes = useCallback(() => {
+    updateJourneyParagraphState((state) => ({
+      ...state,
+      nodes: [],
     }));
   }, []);
 
@@ -83,12 +91,13 @@ export default function AboutContent({
   const [title, component] = routeMap.get(pathName)!;
 
   return (
-    <JourneyParagraphStateContext
+    <ParagraphStateContext
       value={{
-        journeyParagraphState,
+        paragraphState: journeyParagraphState,
         updateDone,
         updateLastIndex,
         updateNodes,
+        cleanNodes,
       }}
     >
       <ContentTitle title="ABOUT ME ?" />
@@ -127,6 +136,6 @@ export default function AboutContent({
           {component}
         </div>
       </div>
-    </JourneyParagraphStateContext>
+    </ParagraphStateContext>
   );
 }

@@ -1,26 +1,51 @@
 "use client";
 import { type ReactNode, useContext, useEffect, useRef, useState } from "react";
 import { waitFor } from "@/utils/tools";
-import { JourneyParagraphStateContext } from "@/app/about/_components/AboutContent";
+import { ParagraphStateContext } from "@/app/about/_components/AboutContent";
 import InlineTextLink from "@/components/decoration/InlineTextLink";
 
 interface Props {
   paragraph: string;
   links: [string, string][];
+  sessionStorageKey: string;
 }
 
-export default function AutoWrittenParagraph({ paragraph, links }: Props) {
-  const { journeyParagraphState, updateNodes, updateDone, updateLastIndex } =
-    useContext(JourneyParagraphStateContext)!;
-  const isDone = journeyParagraphState.done;
+export default function AutoWrittenParagraph({
+  paragraph,
+  links,
+  sessionStorageKey,
+}: Props) {
+  const {
+    paragraphState,
+    updateNodes,
+    updateDone,
+    updateLastIndex,
+    cleanNodes,
+  } = useContext(ParagraphStateContext)!;
+  const isDone = paragraphState.done;
   const linksMap = useRef<Map<string, string>>(new Map(links));
   const linksIndeces = useRef(new Map<number, string>());
   const splittedParagraph = useRef<string[]>([]);
-  const index = journeyParagraphState.lastIndex;
+  const index = paragraphState.lastIndex;
   const [isWriting, setIsWriting] = useState(() => false);
 
   useEffect(() => {
     if (isDone) return;
+    if (sessionStorage.getItem(sessionStorageKey) !== null) {
+      // if the same browser session - return the paragraph without rewriting it
+      cleanNodes();
+      updateNodes(
+        paragraph.split(/<#@(.*?)@#>/).map((val) => {
+          const href = linksMap.current.get(val);
+          return href ? (
+            <InlineTextLink key={val} href={href} text={val} />
+          ) : (
+            val
+          );
+        }),
+      );
+      return;
+    }
     console.log("%cBuilding Journey...", "color:orange");
     // [1] get all the links indeces in the (paragraph)
     [...paragraph.matchAll(/<#@(.*?)@#>/g)].forEach((regexArray) => {
@@ -38,6 +63,8 @@ export default function AutoWrittenParagraph({ paragraph, links }: Props) {
       // as long as we still on the /about route
       updateDone(true);
       setIsWriting(false);
+      // save to sessionStorage to prevent rewriting on the same session
+      sessionStorage.setItem(sessionStorageKey, "");
       return;
     }
 
@@ -50,14 +77,12 @@ export default function AutoWrittenParagraph({ paragraph, links }: Props) {
       if (linksIndeces.current.has(index)) {
         const text = linksIndeces.current.get(index)!;
         const url = linksMap.current.get(text)!;
-
         node = <InlineTextLink key={text} href={url} text={text} />;
         indexPlus = 6 + text.length;
       } else {
         node = splittedParagraph.current![index];
         indexPlus = 1;
       }
-
       updateNodes(node);
       updateLastIndex(index + indexPlus);
     })();
@@ -73,7 +98,7 @@ export default function AutoWrittenParagraph({ paragraph, links }: Props) {
 
   return (
     <p className="text-[--sec-txt-col]">
-      {journeyParagraphState.nodes}
+      {paragraphState.nodes}
 
       {isWriting && (
         <span className="animate-pulse select-none rounded-[2px] bg-dodgerblue before:opacity-0 before:content-['|'] motion-reduce:animate-none"></span>

@@ -8,7 +8,7 @@ export const getDuration = (sinceDate: string | Date) => {
   const diff = new Date(now.getTime() - since.getTime());
 
   if (diff.getTime() < 0) {
-    return { count: 0, label: "back to the future" };
+    return { count: 0, label: "back to the future😅" };
   }
 
   const finalData = (count: number, label: string) => {
@@ -19,7 +19,8 @@ export const getDuration = (sinceDate: string | Date) => {
   const months = diff.getUTCMonth();
 
   if (years > 0) {
-    return finalData(+(years + months / 12).toFixed(2), "year");
+    // return finalData(+(years + months / 12).toFixed(2), "year");
+    return finalData(years * 12 + months, "month");
   } else if (months > 0) {
     return finalData(months, "month");
   }
