@@ -81,7 +81,7 @@ export default function WorkContent() {
           <Image
             loading="eager"
             src={`/imgs/${PROJECTS[activeProject].title}.png`}
-            alt={`Project ${PROJECTS[activeProject].count}`}
+            alt={`Project ${PROJECTS[activeProject].title}`}
             width={250}
             height={250}
             priority

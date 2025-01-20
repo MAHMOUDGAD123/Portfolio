@@ -47,7 +47,6 @@ interface Project {
   count: string;
   title: string;
   description: string;
-  image: string;
   liveLink: string;
   githubLink: string;
   githubAPILink?: string;
@@ -59,7 +58,6 @@ export const PROJECTS: Project[] = [
     title: "PrayerTimes",
     description:
       "PrayerTimes is a simple web app that displays accurate daily prayer times for Muslims based on their location.",
-    image: "https://via.placeholder.com/",
     liveLink: "https://prayertimesv1.netlify.app/",
     githubLink: "https://github.com/MAHMOUDGAD123/PrayerTimes",
     techs: ["HTML5", "CSS3", "JavaScript", "esbuild"],
@@ -69,7 +67,6 @@ export const PROJECTS: Project[] = [
     title: "EGPrices",
     description:
       "EGPrices is a web app that provides real-time updates on gold, silver, and Egyptian pound (EGP) currency rates.",
-    image: "https://via.placeholder.com/150",
     liveLink: "https://egypt-prices.netlify.app/",
     githubLink: "https://github.com/MAHMOUDGAD123/EG_Prices",
     githubAPILink: "https://github.com/MAHMOUDGAD123/egPricesApi",
@@ -81,6 +78,7 @@ export const PROJECTS: Project[] = [
       "ExpressJs",
       "cheerio",
       "esbuild",
+      "Vite",
     ],
   },
   {
@@ -88,11 +86,28 @@ export const PROJECTS: Project[] = [
     title: "VIDL",
     description:
       "VIDL is a video downloader web app that lets users download videos and entire YouTube playlists.",
-    image: "https://via.placeholder.com/150",
     liveLink: "https://vidl-client.vercel.app/",
     githubLink: "https://github.com/MAHMOUDGAD123/vidl-client",
     githubAPILink: "https://github.com/MAHMOUDGAD123/vidl-api",
     techs: ["ReactJs", "React Router", "NodeJs", "ExpressJs", "Vite"],
+  },
+  {
+    count: "04",
+    title: "MG-Portfolio",
+    description:
+      "This is a simple, customizable portfolio website for showcasing your work and skills.",
+    liveLink: "https://portfolio-eight-amber-82.vercel.app/",
+    githubLink: "https://github.com/MAHMOUDGAD123/Portfolio",
+    techs: [
+      "ReactJs",
+      "NodeJs",
+      "Next.js",
+      "TailwindCSS",
+      "playwright",
+      "sweetalert2",
+      "zod",
+      "web3forms",
+    ],
   },
 ];
 
