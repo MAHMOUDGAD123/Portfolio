@@ -2,6 +2,7 @@
 import TitleOnHover from "@/components/decoration/TitleOnHover";
 import { PROJECTS } from "@/utils/constants";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function WorkContent() {
@@ -56,22 +57,30 @@ export default function WorkContent() {
 
           <div className="flex flex-wrap items-center gap-[20px] text-[30px] hover:*:text-dodgerblue">
             <TitleOnHover title="Live">
-              <a href={PROJECTS[activeProject].liveLink} target="_blank">
+              <Link
+                href={PROJECTS[activeProject].liveLink}
+                target={
+                  PROJECTS[activeProject].linkReplace ? "_self" : "_blank"
+                }
+              >
                 <i className="fa-solid fa-link"></i>
-              </a>
+              </Link>
             </TitleOnHover>
 
             <TitleOnHover title="GitHub">
-              <a href={PROJECTS[activeProject].githubLink} target="_blank">
+              <Link href={PROJECTS[activeProject].githubLink} target="_blank">
                 <i className="fa-brands fa-github"></i>
-              </a>
+              </Link>
             </TitleOnHover>
 
             {PROJECTS[activeProject].githubAPILink && (
               <TitleOnHover title="GitHub API">
-                <a href={PROJECTS[activeProject].githubAPILink} target="_blank">
+                <Link
+                  href={PROJECTS[activeProject].githubAPILink}
+                  target="_blank"
+                >
                   <i className="fa-brands fa-github"></i>
-                </a>
+                </Link>
               </TitleOnHover>
             )}
           </div>
