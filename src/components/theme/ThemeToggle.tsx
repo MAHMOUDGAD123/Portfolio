@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { themesMap } from "@/utils/constants";
 import TitleOnHover from "../decoration/TitleOnHover";
 import { ThemeContext } from "@/utils/hooks/useTheme";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function ThemeToggle() {
   const [theme, setTheme, mounted] = useContext(ThemeContext)!;
@@ -16,7 +17,7 @@ export default function ThemeToggle() {
         return (
           <TitleOnHover key={key} position="bottom" title={key.toUpperCase()}>
             <span className={style} onClick={() => setTheme(key)}>
-              <i className={`fa-solid ${icon}`}></i>
+              <FontAwesomeIcon icon={icon} />
             </span>
           </TitleOnHover>
         );

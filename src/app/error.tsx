@@ -1,25 +1,17 @@
 "use client";
 import "../styles/error-root.css";
-import type { Metadata } from "next/types";
 import { useRouter } from "next/navigation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
-interface Props {
-  error: Error;
-  reset: () => void;
-}
-
-export const metadata: Metadata = {
-  title: "Error",
-};
-
-export default function ErrorBoundary({ error }: Props) {
+export default function RootErrorBoundary({ error }: TYPES.ErrorBoundaryProps) {
   const router = useRouter();
 
   return (
     <div className="root-error">
       <div>
         <h1>Error</h1>
-        <i className="fa-solid fa-circle-info"></i>
+        <FontAwesomeIcon className="info" icon={faCircleInfo} />
       </div>
 
       <button

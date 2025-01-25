@@ -2,6 +2,13 @@ import Link from "next/link";
 import AnimatedText from "../animation/AnimatedText";
 import AnimatedTextList from "../animation/AnimatedTextList";
 import { CV_URL } from "@/utils/constants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFile } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function MGCard() {
   return (
@@ -33,21 +40,21 @@ export default function MGCard() {
           <a href={CV_URL} target="_blank">
             <button className="flex items-center gap-3 max-_usm:text-[13px]">
               <span>OPEN CV</span>
-              <i className="fa-solid fa-file"></i>
+              <FontAwesomeIcon icon={faFile} />
             </button>
           </a>
           <div className="inline-flex items-center gap-3 text-[20px] text-[var(--prm-col-1)] *:flex *:aspect-square *:w-[40px] *:items-center *:justify-center *:rounded-full *:border-solid *:border-[var(--prm-col-1)] *:transition-colors *:duration-[var(--trans-dur)] hover:*:bg-[var(--prm-col-1)] hover:*:text-[var(--drk-txt-col)] motion-reduce:*:transition-none">
             <a href="https://github.com/MAHMOUDGAD123" target="_blank">
-              <i className="fa-brands fa-github"></i>
+              <FontAwesomeIcon icon={faGithub} />
             </a>
             <a
               href="https://www.linkedin.com/in/mahmoud-gad-674729198/"
               target="_blank"
             >
-              <i className="fa-brands fa-linkedin"></i>
+              <FontAwesomeIcon icon={faLinkedin} />
             </a>
             <Link href="/contact">
-              <i className="fa-brands fa-whatsapp"></i>
+              <FontAwesomeIcon icon={faWhatsapp} />
             </Link>
           </div>
         </div>

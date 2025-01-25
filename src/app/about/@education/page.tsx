@@ -1,5 +1,5 @@
 import Education from "../_components/Education";
 
-export default function MyContact() {
+export default function EducationPage() {
   return <Education />;
 }

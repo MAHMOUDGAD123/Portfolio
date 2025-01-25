@@ -31,7 +31,7 @@ export default function Education() {
         <FadeInAnimationProvider key={title} delayMs={i * 500}>
           <div
             key={i}
-            className="bg-itembg flex flex-col gap-[10px] rounded-[10px] p-[15px] font-bold max-_xl:items-center"
+            className="flex flex-col gap-[10px] rounded-[10px] bg-itembg p-[15px] font-bold max-_xl:items-center"
           >
             <span className="text-[15px] text-dodgerblue max-_sm:text-[13px]">
               {fromTo}

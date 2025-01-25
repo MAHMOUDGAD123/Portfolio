@@ -8,7 +8,7 @@
   text-align: center;
   --font-size: 130px;
 
-  &:has(i:hover) p {
+  &:has(.info:hover) p {
     opacity: 1;
   }
 
@@ -16,7 +16,7 @@
     position: relative;
   }
 
-  & i {
+  & .info {
     position: absolute;
     font-size: 25px;
     top: 120%;

@@ -1,3 +1,14 @@
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import {
+  faAddressCard,
+  faBriefcase,
+  faDesktop,
+  faEnvelope,
+  faHouse,
+  faMoon,
+  faSun,
+} from "@fortawesome/free-solid-svg-icons";
+
 export const CV_URL =
   "https://www.canva.com/design/DAGaHvR1wns/DMFxm8CSmKTY0dsg3PlcOA/view?utm_content=DAGaHvR1wns&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0ba4a2834e";
 
@@ -6,28 +17,28 @@ export const CAREER_START_DATE = "2024-01-01";
 export interface LinksType {
   href: string;
   name: string;
-  iconClass: string;
+  icon: IconDefinition;
 }
 export const NAV_LINKS: LinksType[] = [
   {
     href: "/",
     name: "Home",
-    iconClass: "fa-solid fa-house",
+    icon: faHouse,
   },
   {
     href: "/about",
     name: "About",
-    iconClass: "fa-solid fa-address-card",
+    icon: faAddressCard,
   },
   {
     href: "/work",
     name: "Work",
-    iconClass: "fa-solid fa-briefcase",
+    icon: faBriefcase,
   },
   {
     href: "/contact",
     name: "Contact",
-    iconClass: "fa-solid fa-envelope",
+    icon: faEnvelope,
   },
 ];
 
@@ -135,10 +146,10 @@ export const themesMap = new Map<
   ThemeType,
   {
     cssValue: ColorSchemeType;
-    icon: string;
+    icon: IconDefinition;
   }
 >([
-  ["light", { cssValue: "light", icon: "fa-sun" }],
-  ["system", { cssValue: "light dark", icon: "fa-desktop" }],
-  ["dark", { cssValue: "dark", icon: "fa-moon" }],
+  ["light", { cssValue: "light", icon: faSun }],
+  ["system", { cssValue: "light dark", icon: faDesktop }],
+  ["dark", { cssValue: "dark", icon: faMoon }],
 ]);

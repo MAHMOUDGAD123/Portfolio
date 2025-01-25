@@ -1,5 +1,5 @@
 import Journey from "../_components/Journey";
 
-export default async function MyDefaultJourney() {
+export default async function JourneyPage() {
   return <Journey />;
 }

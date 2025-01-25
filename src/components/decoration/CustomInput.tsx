@@ -1,3 +1,5 @@
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { HTMLInputTypeAttribute, useState } from "react";
 
 interface Props {
@@ -65,7 +67,10 @@ export default function CustomInput({
           className="absolute bottom-[-23px] ml-[5px] flex w-full items-center gap-[5px]"
           tabIndex={-1}
         >
-          <i className="fa-solid fa-circle-info text-[14px] text-dodgerblue"></i>
+          <FontAwesomeIcon
+            icon={faCircleInfo}
+            className="text-[14px] text-dodgerblue"
+          />
           <span
             className="overflow-hidden overflow-ellipsis whitespace-nowrap text-[10px] font-extrabold text-SecTextCol"
             title={errorMessage}

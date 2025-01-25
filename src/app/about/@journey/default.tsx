@@ -1,5 +1,5 @@
 import Journey from "../_components/Journey";
 
-export default function MyJourney() {
+export default function JourneyDefault() {
   return <Journey />;
 }

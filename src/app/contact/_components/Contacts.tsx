@@ -1,22 +1,30 @@
+import {
+  faEnvelope,
+  faLocationDot,
+  faPhone,
+  type IconDefinition,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 interface ContactType {
-  iconClass: string;
+  icon: IconDefinition;
   title: string;
   info: string;
 }
 
 const contact: ContactType[] = [
   {
-    iconClass: "fa-solid fa-phone",
+    icon: faPhone,
     title: "Phone",
     info: "(+20) 1097890670",
   },
   {
-    iconClass: "fa-solid fa-envelope",
+    icon: faEnvelope,
     title: "Email",
     info: "hooda.gad333@gmail.com",
   },
   {
-    iconClass: "fa-solid fa-location-dot",
+    icon: faLocationDot,
     title: "Address",
     info: "Al Mansurah - Egypt",
   },
@@ -24,14 +32,14 @@ const contact: ContactType[] = [
 
 export default async function Contact() {
   return (
-    <div className="flex flex-wrap gap-[30px] max-_xl:flex-col max-_md:gap-[40px]">
-      {contact.map(({ iconClass, title, info }) => (
+    <>
+      {contact.map(({ icon, title, info }) => (
         <div
           key={title}
           className="flex items-center gap-[20px] max-_md:flex-col"
         >
-          <div className="bg-itembg flex aspect-square w-[65px] items-center justify-center rounded-[10px] text-[25px] text-dodgerblue *:hover:animate-pulse *:hover:[animation-duration:1s] motion-reduce:*:hover:animate-none">
-            <i className={iconClass}></i>
+          <div className="flex aspect-square w-[65px] items-center justify-center rounded-[10px] bg-itembg text-[25px] text-dodgerblue *:hover:animate-pulse *:hover:[animation-duration:1s] motion-reduce:*:hover:animate-none">
+            <FontAwesomeIcon icon={icon} />
           </div>
           <div className="flex flex-1 flex-col items-start justify-center gap-[7px] max-_md:items-center">
             <span className="text-[14px] font-extrabold text-SecTextCol">
@@ -44,6 +52,6 @@ export default async function Contact() {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 }

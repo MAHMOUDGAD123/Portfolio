@@ -67,7 +67,10 @@ h1 {
 
 img {
   max-width: 100%;
+  width: auto;
   display: block;
+  object-fit: cover;
+  border-radius: inherit;
 }
 
 button {

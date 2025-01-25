@@ -18,7 +18,6 @@ export default function AboutLayout({
   children,
   education,
   journey,
-  // contact,
   skills,
 }: Props) {
   return (

@@ -1,5 +1,4 @@
 import "../styles/_globals.css";
-import "../fonts/fa/css/all.min.css";
 import React from "react";
 import { Metadata } from "next";
 import localFont from "next/font/local";
@@ -7,6 +6,12 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Script from "next/script";
 import SpinnerDecore from "@/components/decoration/SpinnerDecore";
+// fix font-awesome styling error
+// -------------------------------------------------------
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
+// -------------------------------------------------------
 
 const robotoMono = localFont({
   src: "../fonts/RobotoMono.woff2",

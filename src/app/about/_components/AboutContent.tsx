@@ -30,15 +30,9 @@ interface Props {
   journey: React.ReactNode;
   education: React.ReactNode;
   skills: React.ReactNode;
-  // contact: React.ReactNode;
 }
 
-export default function AboutContent({
-  journey,
-  education,
-  skills,
-  // contact,
-}: Props) {
+export default function AboutContent({ journey, education, skills }: Props) {
   // Journey Context Start
   const [journeyParagraphState, updateJourneyParagraphState] =
     useState<JourneyParagraphStateContextType>(initialState);
@@ -83,12 +77,8 @@ export default function AboutContent({
       "/about/skills",
       ["My Skills", skills, "Designing smooth|user experiences."],
     ],
-    // [
-    //   "/about/contact",
-    //   ["My Contact", contact, "Coding interactive|digital solutions."],
-    // ],
   ]);
-  const [title, component] = routeMap.get(pathName)!;
+  const [title, component, quote] = routeMap.get(pathName)!;
 
   return (
     <ParagraphStateContext
@@ -105,24 +95,21 @@ export default function AboutContent({
       <div className="flex gap-[70px] max-_xl:flex-col max-_xl:items-center">
         <div className="w-[215px] animate-settleLeft motion-reduce:animate-none max-_xl:m-auto max-_xl:w-full">
           <div className="mb-[50px] text-[20px] font-extrabold max-_xl:mx-auto max-_xl:text-center max-_xl:text-[30px] max-_md:text-[25px] max-_sm:text-[18px]">
-            {routeMap
-              .get(pathName)![2]
-              .split("|")
-              .map((txt, i) => (
-                <div key={txt} className="whitespace-nowrap">
-                  {i === 0
-                    ? txt.split(" ").map((word, i) => {
-                        return i === 1 ? (
-                          <span key={word} className="text-dodgerblue">
-                            {word}
-                          </span>
-                        ) : (
-                          `${word} `
-                        );
-                      })
-                    : txt}
-                </div>
-              ))}
+            {quote.split("|").map((txt, i) => (
+              <div key={txt} className="whitespace-nowrap">
+                {i === 0
+                  ? txt.split(" ").map((word, i) => {
+                      return i === 1 ? (
+                        <span key={word} className="text-dodgerblue">
+                          {word}
+                        </span>
+                      ) : (
+                        `${word} `
+                      );
+                    })
+                  : txt}
+              </div>
+            ))}
           </div>
 
           <AboutNav />
