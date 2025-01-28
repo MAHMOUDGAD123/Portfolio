@@ -14,17 +14,31 @@ interface CardInfo {
 }
 export const PLUS_Work: CardInfo[] = [
   {
-    title: "CSS Portfolio Template",
-    img: "/imgs/plus/css-portfolio.webp",
-    liveLink: "https://portfolio-template-zero.netlify.app/",
-    githubLink: "https://github.com/MAHMOUDGAD123/Portfolio-Template",
-    techs: ["HTML", "CSS"],
+    title: "React Calculator",
+    img: "/imgs/plus/react-calc.webp",
+    liveLink: "https://mg-react-calc.netlify.app/",
+    githubLink: "https://github.com/MAHMOUDGAD123/React-Calculator",
+    techs: ["ReactJS"],
   },
   {
     title: "CSS Theme Demo",
     img: "/imgs/plus/css-only-theme.webp",
     liveLink: "https://mahmoudgad123.github.io/CSS-Only-Light-Dark/",
     githubLink: "https://github.com/MAHMOUDGAD123/CSS-Only-Light-Dark",
+    techs: ["HTML", "CSS"],
+  },
+  {
+    title: "Tic Tac Toe",
+    img: "/imgs/plus/tic-tac-toe.webp",
+    liveLink: "https://mahmoudgad123.github.io/Tic-Tac-Toe/",
+    githubLink: "https://github.com/MAHMOUDGAD123/Tic-Tac-Toe",
+    techs: ["HTML", "CSS", "JS"],
+  },
+  {
+    title: "CSS Battle",
+    img: "/imgs/plus/css-cool-shapes.webp",
+    liveLink: "https://mahmoudgad123.github.io/Cool-CSS-Shapes/",
+    githubLink: "https://github.com/MAHMOUDGAD123/Cool-CSS-Shapes",
     techs: ["HTML", "CSS"],
   },
   {
@@ -42,10 +56,17 @@ export const PLUS_Work: CardInfo[] = [
     techs: ["HTML", "CSS", "JS"],
   },
   {
-    title: "CSS Battle",
-    img: "/imgs/plus/css-cool-shapes.webp",
-    liveLink: "https://mahmoudgad123.github.io/Cool-CSS-Shapes/",
-    githubLink: "https://github.com/MAHMOUDGAD123/Cool-CSS-Shapes",
+    title: "CSS Animation Demo",
+    img: "/imgs/plus/css-animation.webp",
+    liveLink: "https://mahmoudgad123.github.io/CSS-Animation-Demo/",
+    githubLink: "https://github.com/MAHMOUDGAD123/CSS-Animation-Demo",
+    techs: ["HTML", "CSS", "JS"],
+  },
+  {
+    title: "CSS Portfolio Template",
+    img: "/imgs/plus/css-portfolio.webp",
+    liveLink: "https://portfolio-template-zero.netlify.app/",
+    githubLink: "https://github.com/MAHMOUDGAD123/Portfolio-Template",
     techs: ["HTML", "CSS"],
   },
   {
@@ -54,27 +75,6 @@ export const PLUS_Work: CardInfo[] = [
     liveLink: "https://mahmoudgad123.github.io/JS-Clock/",
     githubLink: "https://github.com/MAHMOUDGAD123/JS-Clock",
     techs: ["HTML", "CSS", "JS"],
-  },
-  {
-    title: "CSS Animation Demo",
-    img: "/imgs/plus/css-animation.webp",
-    liveLink: "https://mahmoudgad123.github.io/CSS-Animation-Demo/",
-    githubLink: "https://github.com/MAHMOUDGAD123/CSS-Animation-Demo",
-    techs: ["HTML", "CSS", "JS"],
-  },
-  {
-    title: "Tic Tac Toe",
-    img: "/imgs/plus/tic-tac-toe.webp",
-    liveLink: "https://mahmoudgad123.github.io/Tic-Tac-Toe/",
-    githubLink: "https://github.com/MAHMOUDGAD123/Tic-Tac-Toe",
-    techs: ["HTML", "CSS", "JS"],
-  },
-  {
-    title: "React Calculator",
-    img: "/imgs/plus/react-calc.webp",
-    liveLink: "https://mg-react-calc.netlify.app/",
-    githubLink: "https://github.com/MAHMOUDGAD123/React-Calculator",
-    techs: ["ReactJS"],
   },
   {
     title: "CSS Tracker Ball Demo",

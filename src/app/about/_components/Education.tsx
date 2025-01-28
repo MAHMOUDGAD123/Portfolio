@@ -12,16 +12,16 @@ const education: EducationType[] = [
     title: "Computer Engineering",
     at: "Mansourah University",
   },
-  {
-    fromTo: "2023",
-    title: "Programming With C++",
-    at: "ProgrammingAdvices.com",
-  },
-  {
-    fromTo: "2024",
-    title: "Web Development",
-    at: "Youtube - Docs",
-  },
+  // {
+  //   fromTo: "2023",
+  //   title: "Programming With C++",
+  //   at: "ProgrammingAdvices.com",
+  // },
+  // {
+  //   fromTo: "2024",
+  //   title: "Web Development",
+  //   at: "Youtube - Docs",
+  // },
 ];
 
 export default function Education() {

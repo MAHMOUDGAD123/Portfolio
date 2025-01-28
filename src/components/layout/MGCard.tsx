@@ -32,8 +32,8 @@ export default function MGCard() {
         />
 
         <p className="mt-[25px] max-w-[400px] text-[12px] text-[--sec-txt-col] max-_xl:mx-auto max-_xl:place-self-center max-_md:text-[11px] max-_usm:text-[10px]">
-          I am a junior frontend developer with experience in building
-          interactive web applications using HTML, CSS, Javascript, and ReactJs.
+          I am a front-end developer with experience in building interactive web
+          applications using HTML, CSS, Javascript, and ReactJs.
         </p>
 
         <div className="mt-[40px] flex items-center justify-start gap-6 max-_xl:flex-col">
