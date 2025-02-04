@@ -4,6 +4,8 @@ import PageHolder from "@/components/layout/PageHolder";
 import Statistics from "@/components/statistics/Statistics";
 import type { Metadata } from "next/types";
 
+export const revalidate = 60 * 60 * 24 * 3; // revalidate cache every 3 days
+
 export const metadata: Metadata = {
   title: "Home - MG",
 };

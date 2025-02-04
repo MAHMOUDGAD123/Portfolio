@@ -1,4 +1,4 @@
-import "../../styles/icon-slider.css";
+import "@/styles/icon-slider.css";
 
 interface Props {
   iconList: [React.ReactNode, string][];

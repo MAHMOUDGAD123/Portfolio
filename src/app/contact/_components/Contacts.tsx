@@ -30,7 +30,7 @@ const contact: ContactType[] = [
   },
 ];
 
-export default async function Contact() {
+export default async function Contacts() {
   return (
     <>
       {contact.map(({ icon, title, info }) => (

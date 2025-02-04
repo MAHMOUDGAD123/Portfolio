@@ -1,5 +1,4 @@
-import "../styles/loader.css";
-import Loader from "@/components/layout/Loader";
+import Loader from "@/components/loading/Loader";
 
 export default function Loading() {
   return <Loader />;

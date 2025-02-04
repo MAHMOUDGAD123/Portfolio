@@ -1,5 +1,5 @@
 "use client";
-import Spinner from "@/components/animation/Spinner";
+import Spinner from "@/components/loading/SpinnerCSR";
 import CustomInput from "@/components/decoration/CustomInput";
 import { contactMeAction } from "@/utils/actions";
 import { useActionState, useEffect, useRef, useState } from "react";
@@ -58,7 +58,7 @@ export default function ContactMeForm() {
         position: "bottom-end",
         width: "max-content",
         showConfirmButton: false,
-        allowOutsideClick: true,
+        // allowOutsideClick: true,
         allowEscapeKey: true,
         timer: 5000,
         background: "light-dark(#ddddddc0,#222222c0)",
@@ -66,7 +66,7 @@ export default function ContactMeForm() {
         color: "var(--prm-col-1)",
         icon: icon,
         title: title,
-        draggable: true,
+        // draggable: true,
         animation: window.matchMedia("(prefers-reduced-motion: reduce)").matches
           ? false
           : true,

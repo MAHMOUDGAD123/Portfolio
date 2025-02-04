@@ -1,5 +1,5 @@
 import Education from "../../_components/Education";
 
-export default function MyEducaiton() {
+export default async function EducaitonPage() {
   return <Education />;
 }

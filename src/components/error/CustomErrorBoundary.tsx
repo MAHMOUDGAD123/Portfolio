@@ -1,5 +1,5 @@
 "use client";
-import "../../styles/error-route.css";
+import "@/styles/error-route.css";
 import { useRef } from "react";
 import { createPortal } from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

@@ -1,5 +1,5 @@
 "use client";
-import "../styles/error-root.css";
+import "@/styles/error-root.css";
 import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";

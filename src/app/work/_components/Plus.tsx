@@ -12,6 +12,7 @@ interface CardInfo {
   githubLink: string;
   techs: string[];
 }
+
 export const PLUS_Work: CardInfo[] = [
   {
     title: "React Calculator",

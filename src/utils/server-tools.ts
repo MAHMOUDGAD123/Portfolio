@@ -8,21 +8,12 @@ type RepoType = KeyValue & { name: string };
 
 // gethub commits data fetching
 export const getGithubCommitCount = async () => {
-  const fakeTotle = 261;
-
   if (process.env.NODE_ENV == "development") {
-    return fakeTotle;
+    return (Math.random() * 500 + 100) >>> 0;
   }
 
   try {
-    const res = await fetch(
-      "https://api.github.com/users/MAHMOUDGAD123/repos",
-      {
-        next: {
-          revalidate: 60 * 60 * 24 * 3, // every 3 days
-        },
-      },
-    );
+    const res = await fetch("https://api.github.com/users/MAHMOUDGAD123/repos");
     const repos: RepoType[] = await res.json();
     let count = 0;
     for (const repo of repos) {
@@ -35,6 +26,6 @@ export const getGithubCommitCount = async () => {
     return count;
   } catch (err) {
     console.log((err as Error).message);
-    return fakeTotle;
+    return (Math.random() * 500 + 100) >>> 0;
   }
 };

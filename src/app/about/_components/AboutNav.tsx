@@ -5,7 +5,6 @@ export default function AboutNav() {
     { text: "Journey", href: "/about" },
     { text: "Education", href: "/about/education" },
     { text: "Skills", href: "/about/skills" },
-    // { text: "Contact", href: "/about/contact" },
   ];
 
   return (

@@ -13,7 +13,7 @@ interface Props {
   plus: React.ReactNode;
 }
 
-export default function WorkLayout({ children, projects, plus }: Props) {
+export default async function WorkLayout({ children, projects, plus }: Props) {
   return (
     <PageHolder>
       {children}

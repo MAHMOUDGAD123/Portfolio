@@ -1,5 +1,5 @@
 import Plus from "../../_components/Plus";
 
-export default async function MyPlus() {
+export default async function PlusPage() {
   return <Plus />;
 }

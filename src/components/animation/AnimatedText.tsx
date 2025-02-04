@@ -1,4 +1,4 @@
-import "../../styles/animated-text.css";
+import "@/styles/animated-text.css";
 
 interface Props {
   text: string;

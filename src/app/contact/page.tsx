@@ -3,7 +3,7 @@ import PageHolder from "@/components/layout/PageHolder";
 import ContactMeForm from "./_components/ContactMeForm";
 import Contacts from "./_components/Contacts";
 
-export default async function ContactPage() {
+export default async function ContactsPage() {
   return (
     <PageHolder>
       <ContentTitle title="CONTACT ME" />
