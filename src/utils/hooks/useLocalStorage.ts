@@ -14,7 +14,7 @@ const getStoredValue = <T>(key: string, defaultValue: T): T => {
 };
 
 /** a custom useState to store the state in the localStorage */
-export const useStateLs = <T>(
+export const useLocalStorage = <T>(
   key: string,
   defaultValue: T,
 ): useStateLSType<T> => {

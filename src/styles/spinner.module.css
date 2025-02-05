@@ -23,11 +23,24 @@
       transform-origin: center;
 
       &:nth-child(1) {
+        animation-name: spin-anticlockwise;
         stroke-dasharray: calc((232 - 7) / 7) 7;
       }
       &:nth-child(2) {
+        animation-name: spin-clockwise;
         stroke-dasharray: calc((180 - 7) / 7) 7;
       }
     }
+  }
+}
+
+@keyframes spin-anticlockwise {
+  to {
+    transform: rotateZ(-1turn);
+  }
+}
+@keyframes spin-clockwise {
+  to {
+    transform: rotateZ(1turn);
   }
 }

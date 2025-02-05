@@ -1,6 +1,7 @@
-import { useState, useEffect, createContext } from "react";
+import { useEffect, createContext } from "react";
 import { themesMap, type ThemeType } from "../constants";
-import { useStateLs } from "./useStateLs";
+import { useLocalStorage } from "./useLocalStorage";
+import { useMounted } from "./useMounted";
 
 export type UseStateLSType = [
   ThemeType,
@@ -15,12 +16,8 @@ export const useTheme = (
   key: string,
   defaultValue: ThemeType,
 ): UseStateLSType => {
-  const [mounted, setMounted] = useState(() => false);
-  const [theme, setTheme] = useStateLs(key, defaultValue);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useMounted();
+  const [theme, setTheme] = useLocalStorage(key, defaultValue);
 
   useEffect(() => {
     document.documentElement.style.colorScheme = themesMap.get(theme)!.cssValue;

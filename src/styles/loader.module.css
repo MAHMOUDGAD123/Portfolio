@@ -63,3 +63,14 @@
     fill-opacity: 0.5;
   }
 }
+
+@keyframes spin-anticlockwise {
+  to {
+    transform: rotateZ(-1turn);
+  }
+}
+@keyframes spin-clockwise {
+  to {
+    transform: rotateZ(1turn);
+  }
+}

@@ -7,6 +7,5 @@ const SpinnerComp = dynamic(() => import("./Spinner"), {
 });
 
 export default function Loading() {
-  // return <SpinnerComp />;
   return <SpinnerComp />;
 }

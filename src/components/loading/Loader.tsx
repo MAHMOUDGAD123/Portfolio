@@ -1,37 +1,21 @@
 import styles from "@/styles/loader.module.css";
 
 interface CircleProps {
-  r: string;
-  spin?: boolean;
+  radius: string;
 }
 
-const Circle = ({ r, spin }: CircleProps) => {
-  return (
-    <circle
-      cx="50%"
-      cy="50%"
-      r={r}
-      style={{ animationName: spin ? "spin-anticlockwise" : "" }}
-    />
-  );
+const Circle = ({ radius }: CircleProps) => {
+  return <circle cx="50%" cy="50%" r={radius} />;
 };
 
 export default function Loader() {
-  const circles: CircleProps[] = [
-    { r: "51", spin: true },
-    { r: "43", spin: true },
-    { r: "35", spin: true },
-    { r: "27", spin: true },
-    { r: "19", spin: true },
-    { r: "11", spin: true },
-    { r: "3" },
-  ];
+  const circles = ["51", "43", "35", "27", "19", "11", "3"];
 
   return (
     <div className={styles.loader}>
       <svg>
-        {circles.map((props, i) => (
-          <Circle key={i} {...props} />
+        {circles.map((radius, i) => (
+          <Circle key={i} radius={radius} />
         ))}
       </svg>
     </div>

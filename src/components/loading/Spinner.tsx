@@ -4,22 +4,8 @@ export default function Spinner() {
   return (
     <div className={styles.spinner}>
       <svg>
-        <circle
-          cx="50%"
-          cy="50%"
-          r="21"
-          style={{
-            animationName: "spin-anticlockwise",
-          }}
-        />
-        <circle
-          cx="50%"
-          cy="50%"
-          r="15"
-          style={{
-            animationName: "spin-clockwise",
-          }}
-        />
+        <circle cx="50%" cy="50%" r="21" />
+        <circle cx="50%" cy="50%" r="15" />
       </svg>
     </div>
   );
