@@ -22,6 +22,13 @@ export const PLUS_Work: CardInfo[] = [
     techs: ["ReactJS"],
   },
   {
+    title: "FLIP Layout",
+    img: "/imgs/plus/flip-layout.webp",
+    liveLink: "https://mahmoudgad123.github.io/flip-layout/",
+    githubLink: "https://github.com/MAHMOUDGAD123/flip-layout",
+    techs: ["HTML", "CSS", "JS"],
+  },
+  {
     title: "CSS Theme Demo",
     img: "/imgs/plus/css-only-theme.webp",
     liveLink: "https://mahmoudgad123.github.io/CSS-Only-Light-Dark/",
