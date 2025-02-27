@@ -30,6 +30,6 @@ exec(
       console.error(`Server stderr: ${stderr}`);
       return;
     }
-    console.log(`Development server running at http://${localIP}:${PORT}`);
+    console.log(`Next app running at http://${localIP}:${PORT}`);
   },
 );

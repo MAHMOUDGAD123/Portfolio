@@ -13,7 +13,7 @@ import {
 export default function MGCard() {
   return (
     <div className="flex w-full animate-settleLeft flex-col motion-reduce:animate-none max-_xl:text-center">
-      <p className="text-[24px] font-extrabold max-_md:text-[15px] max-_usm:text-[13px]">
+      <p className="text-[24px] font-extrabold max-_md:text-[19px]">
         Hello, my name is
       </p>
 
