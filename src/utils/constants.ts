@@ -112,7 +112,6 @@ export const PROJECTS: Project[] = [
     title: "MG-Portfolio",
     description:
       "This is a simple, customizable portfolio website for showcasing your work and skills.",
-    // liveLink: "https://portfolio-eight-amber-82.vercel.app/",
     liveLink: "/",
     linkReplace: true,
     githubLink: "https://github.com/MAHMOUDGAD123/Portfolio",
@@ -129,13 +128,13 @@ export const PROJECTS: Project[] = [
   },
   {
     count: "05",
-    title: "Dummy-Router",
+    title: "SPA-APP",
     description:
-      "A client-side router, built with plain JavaScript, supports nested routes, 404 handling, async route loading, caching, and dynamic routing",
-    liveLink: "https://dummy-router.netlify.app/",
+      "This is a Single Page Application (SPA) built using plain JavaScript. It features a custom client-side router that manages navigation without page reloads and handles dynamic view rendering based on the current route. Everything is managed without any external libraries or frameworks.",
+    liveLink: "https://mg-spa-app.netlify.app/",
     linkReplace: false,
-    githubLink: "https://github.com/MAHMOUDGAD123/Dummy-Router",
-    techs: ["JavaScript", "TypeScript", "Vite"],
+    githubLink: "https://github.com/MAHMOUDGAD123/spa-app",
+    techs: ["HTML5", "CSS3", "JavaScript", "TypeScript", "Vite"],
   },
 ];
 
