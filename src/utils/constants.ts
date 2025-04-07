@@ -128,9 +128,9 @@ export const PROJECTS: Project[] = [
   },
   {
     count: "05",
-    title: "SPA-APP",
+    title: "SPA",
     description:
-      "This is a Single Page Application (SPA) built using plain JavaScript. It features a custom client-side router that manages navigation without page reloads and handles dynamic view rendering based on the current route. Everything is managed without any external libraries or frameworks.",
+      "This SPA is built with plain JavaScript. It uses a custom router for client-side navigation and renders views dynamically without any frameworks.",
     liveLink: "https://mg-spa-app.netlify.app/",
     linkReplace: false,
     githubLink: "https://github.com/MAHMOUDGAD123/spa-app",
