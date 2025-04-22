@@ -4,7 +4,7 @@ type KeyValue = {
   [key: string]: unknown;
 };
 
-type RepoType = KeyValue & { name: string; private: boolean };
+type RepoType = KeyValue & { name: string };
 
 // gethub commits data fetching
 export const getGithubCommitCount = async () => {
@@ -12,7 +12,7 @@ export const getGithubCommitCount = async () => {
     return (Math.random() * 400 + 100) >>> 0;
   }
 
-  const githubAccessToken = "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";
+  const githubAccessToken = process.env.GITHUB_TOKEN;
 
   if (!githubAccessToken) {
     throw new Error("GITHUB_TOKEN not found");
@@ -31,19 +31,17 @@ export const getGithubCommitCount = async () => {
     const repos: RepoType[] = await res.json();
     let count = 0;
     for (const repo of repos) {
-      if (!repo.private) {
-        const commitsRes = await fetch(
-          `https://api.github.com/repos/MAHMOUDGAD123/${repo.name}/commits`,
-          {
-            headers: {
-              Authorization: `Bearer ${githubAccessToken}`,
-              Accept: "application/vnd.github.v3+json",
-            },
+      const commitsRes = await fetch(
+        `https://api.github.com/repos/MAHMOUDGAD123/${repo.name}/commits`,
+        {
+          headers: {
+            Authorization: `Bearer ${githubAccessToken}`,
+            Accept: "application/vnd.github.v3+json",
           },
-        );
-        const commits: KeyValue[] = await commitsRes.json();
-        count += commits.length || 0;
-      }
+        },
+      );
+      const commits: KeyValue[] = await commitsRes.json();
+      count += commits.length || 0;
     }
     return count;
   } catch (err) {
