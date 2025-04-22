@@ -1,5 +1,4 @@
 "use server";
-import { connection } from "next/server";
 
 type KeyValue = {
   [key: string]: unknown;
@@ -9,8 +8,6 @@ type RepoType = KeyValue & { name: string; private: boolean };
 
 // gethub commits data fetching
 export const getGithubCommitCount = async () => {
-  await connection();
-
   if (process.env.NODE_ENV == "development") {
     return (Math.random() * 400 + 100) >>> 0;
   }
