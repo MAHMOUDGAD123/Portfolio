@@ -12,30 +12,23 @@ export const getGithubCommitCount = async () => {
     return (Math.random() * 400 + 100) >>> 0;
   }
 
-  const githubAccessToken = process.env.GITHUB_TOKEN;
+  // const githubAccessToken = process.env.GITHUB_TOKEN;
 
-  if (!githubAccessToken) {
-    throw new Error("GITHUB_TOKEN not found");
-  }
+  // if (!githubAccessToken) {
+  //   throw new Error("GITHUB_TOKEN not found");
+  // }
 
   // try {
-  const res = await fetch("https://api.github.com/users/MAHMOUDGAD123/repos", {
-    headers: {
-      Authorization: `Bearer ${githubAccessToken}`,
-      Accept: "application/vnd.github.v3+json",
-    },
-  });
+  const res = await fetch(
+    "https://api.github.com/users/MAHMOUDGAD123/repos",
+    {},
+  );
   const repos: RepoType[] = await res.json();
   let count = 0;
   for (const repo of repos) {
     const commitsRes = await fetch(
       `https://api.github.com/repos/MAHMOUDGAD123/${repo.name}/commits`,
-      {
-        headers: {
-          Authorization: `Bearer ${githubAccessToken}`,
-          Accept: "application/vnd.github.v3+json",
-        },
-      },
+      {},
     );
     const commits: KeyValue[] = await commitsRes.json();
     count += commits.length || 0;
