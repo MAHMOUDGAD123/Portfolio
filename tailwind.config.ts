@@ -23,7 +23,7 @@ export default {
         dodgerblue_50: "#1e90ff80",
         dodgerblue_30: "#1e90ff30",
         dodgerblue_20: "#1e90ff20",
-        SecTextCol: "#777",
+        SecTextCol: "light-dark(#666,#999)",
         drkTxtCol: "#ededed",
         litTxtCol: "#171717",
         seclitbg: "#eeeeee",

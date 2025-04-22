@@ -16,7 +16,7 @@
   --prm-col-4: #1e90ff30;
   --prm-col-5: #1e90ff20;
 
-  --sec-col-1: #686868;
+  --sec-col-1: light-dark(#666, #999);
 
   --header-height: 90px;
   --main-height: calc(100dvh - var(--header-height));

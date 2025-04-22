@@ -60,6 +60,7 @@ export default async function RootLayout({
       className={`${robotoMono.variable} ${sairaStencilOne.variable}`}
     >
       <head>
+        <link rel="modulepreload" href="/theme-init.js" />
         {/* eslint-disable-next-line */}
         <script src="/theme-init.js" />
       </head>

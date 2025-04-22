@@ -12,7 +12,7 @@ export default function SideNav() {
   const [show, setShow] = useState<boolean>(false);
 
   return (
-    <div className="z-[100] font-extrabold text-current _xl:hidden">
+    <div className="z-[100] overscroll-contain font-extrabold text-current _xl:hidden">
       <div
         className="cursor-pointer text-[20px] text-[--sec-col-1] transition-colors duration-[--trans-dur] hover:text-[--prm-col-1] motion-reduce:transition-none"
         onClick={() => setShow((current) => !current)}
@@ -29,7 +29,7 @@ export default function SideNav() {
             }
           }}
         >
-          <nav className="relative right-0 flex h-full animate-settleX flex-col items-center justify-start gap-[30px] bg-[light-dark(#eee,#111)] px-[30px] py-[20px] text-[17px] font-bold text-[--sec-col-1] motion-reduce:right-0 motion-reduce:animate-none">
+          <nav className="relative right-0 flex h-full animate-settleX flex-col items-center justify-start gap-[30px] overflow-auto bg-[light-dark(#eee,#111)] px-[30px] py-[20px] text-[17px] font-bold text-[--sec-col-1] motion-reduce:right-0 motion-reduce:animate-none">
             <h1 className="mt-[15px] font-saira text-dodgerblue">MG</h1>
 
             <hr className="h-[1px] w-full rounded-[100%] bg-[light-dark(#ccc,#333)]" />

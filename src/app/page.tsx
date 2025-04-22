@@ -1,4 +1,4 @@
-import AnimatedFramerText from "@/components/animation/AnimatedFramerText";
+import AnimatedFramerHero from "@/components/animation/AnimatedFramerHero";
 import MGCard from "@/components/layout/MGCard";
 import PageHolder from "@/components/layout/PageHolder";
 import Statistics from "@/components/statistics/Statistics";
@@ -15,7 +15,7 @@ export default async function Home() {
     <PageHolder>
       <div className="mt-[20px] flex items-center justify-between gap-[25px] max-_xl:flex-col-reverse max-_xl:gap-[70px]">
         <MGCard />
-        <AnimatedFramerText text="MG" />
+        <AnimatedFramerHero />
       </div>
 
       <Statistics />

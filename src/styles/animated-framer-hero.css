@@ -1,9 +1,9 @@
 .animated-framer-text {
   --color: rgb(30 144 255 / 0.55);
+  --img-width-percentage: 97%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 110px;
   width: 700px;
   font-family: var(--font-saira-stencil-one);
   color: var(--prm-col-1);
@@ -12,7 +12,6 @@
   aspect-ratio: 1;
   position: relative;
   box-shadow: 0 0 200px 30px var(--color);
-  opacity: 0;
   animation:
     fade-in 1.5s linear forwards,
     settle-right 1s linear forwards;
@@ -62,19 +61,37 @@
   }
 
   &::after {
-    content: attr(data-text);
+    content: attr(data-text, "");
     background-color: light-dark(var(--lit-bg-col), var(--drk-bg-col));
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 97%;
+    width: var(--img-width-percentage);
     aspect-ratio: 1;
     border-radius: inherit;
     position: absolute;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
-    box-shadow: inset 0 0 50px var(--color);
+    box-shadow: inset 0 0 70px var(--color);
+    font-size: 150px;
+  }
+
+  & > .img-box {
+    width: var(--img-width-percentage);
+    aspect-ratio: 1;
+    z-index: 1;
+    border-radius: inherit;
+    position: relative;
+    contain: paint;
+    mix-blend-mode: luminosity;
+
+    & > img {
+      width: 100%;
+      position: absolute;
+      top: 35px;
+      scale: 1.3;
+    }
   }
 }
 

@@ -28,10 +28,10 @@ export default function MGCard() {
             "React.js Developer",
             "Web Developer",
           ]}
-          duration={3}
+          duration={3.5}
         />
 
-        <p className="mt-[25px] max-w-[400px] text-[12px] text-[--sec-txt-col] max-_xl:mx-auto max-_xl:place-self-center max-_md:text-[11px] max-_usm:text-[10px]">
+        <p className="mt-[25px] max-w-[400px] text-[0.95rem] text-SecTextCol max-_xl:mx-auto max-_md:text-[0.9rem] max-_usm:text-[0.75rem]">
           I am a front-end developer with experience in building interactive web
           applications using HTML, CSS, Javascript, and ReactJs.
         </p>

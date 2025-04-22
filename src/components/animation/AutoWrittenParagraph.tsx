@@ -1,7 +1,7 @@
 "use client";
 import { type ReactNode, useContext, useEffect, useRef, useState } from "react";
 import { waitFor } from "@/utils/tools";
-import { ParagraphStateContext } from "@/app/about/_components/AboutContent";
+import { ParagraphStateContext } from "@/app/about/_components/Journey";
 import InlineTextLink from "@/components/decoration/InlineTextLink";
 
 interface Props {
@@ -98,7 +98,7 @@ export default function AutoWrittenParagraph({
   ]);
 
   return (
-    <p className="text-[--sec-txt-col]">
+    <p className="text-SecTextCol">
       {paragraphState.nodes}
 
       {isWriting && (

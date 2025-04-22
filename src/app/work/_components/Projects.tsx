@@ -48,7 +48,7 @@ export default function Projects() {
             {PROJECTS[activeProject].title}
           </span>
 
-          <p className="text-[15px] text-SecTextCol">
+          <p className="text-[1rem] text-SecTextCol">
             {PROJECTS[activeProject].description}
           </p>
 
