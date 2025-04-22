@@ -62,7 +62,7 @@
 
   &::after {
     content: attr(data-text, "");
-    background-color: light-dark(var(--lit-bg-col), var(--drk-bg-col));
+    background-color: light-dark(#b0d7fd, var(--drk-bg-col));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,7 +84,7 @@
     border-radius: inherit;
     position: relative;
     contain: paint;
-    mix-blend-mode: luminosity;
+    mix-blend-mode: hard-light;
 
     & > img {
       width: 100%;
