@@ -12,7 +12,7 @@ export const getGithubCommitCount = async () => {
     return (Math.random() * 400 + 100) >>> 0;
   }
 
-  const githubAccessToken = process.env.GITHUB_TOKEN;
+  const githubAccessToken = "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";
 
   if (!githubAccessToken) {
     throw new Error("GITHUB_TOKEN not found");
