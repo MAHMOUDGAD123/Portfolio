@@ -18,9 +18,18 @@ export const getGithubCommitCount = async () => {
     throw new Error("GITHUB_TOKEN not found");
   }
 
-  try {
-    const res = await fetch(
-      "https://api.github.com/users/MAHMOUDGAD123/repos",
+  // try {
+  const res = await fetch("https://api.github.com/users/MAHMOUDGAD123/repos", {
+    headers: {
+      Authorization: `Bearer ${githubAccessToken}`,
+      Accept: "application/vnd.github.v3+json",
+    },
+  });
+  const repos: RepoType[] = await res.json();
+  let count = 0;
+  for (const repo of repos) {
+    const commitsRes = await fetch(
+      `https://api.github.com/repos/MAHMOUDGAD123/${repo.name}/commits`,
       {
         headers: {
           Authorization: `Bearer ${githubAccessToken}`,
@@ -28,24 +37,12 @@ export const getGithubCommitCount = async () => {
         },
       },
     );
-    const repos: RepoType[] = await res.json();
-    let count = 0;
-    for (const repo of repos) {
-      const commitsRes = await fetch(
-        `https://api.github.com/repos/MAHMOUDGAD123/${repo.name}/commits`,
-        {
-          headers: {
-            Authorization: `Bearer ${githubAccessToken}`,
-            Accept: "application/vnd.github.v3+json",
-          },
-        },
-      );
-      const commits: KeyValue[] = await commitsRes.json();
-      count += commits.length || 0;
-    }
-    return count;
-  } catch (err) {
-    console.error((err as Error).message);
-    return 303;
+    const commits: KeyValue[] = await commitsRes.json();
+    count += commits.length || 0;
   }
+  return count;
+  // } catch (err) {
+  //   console.error((err as Error).message);
+  //   return 303;
+  // }
 };
