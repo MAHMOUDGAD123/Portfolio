@@ -2,6 +2,11 @@ import ContentTitle from "@/components/decoration/ContentTitle";
 import PageHolder from "@/components/layout/PageHolder";
 import ContactMeForm from "./_components/ContactMeForm";
 import Contacts from "./_components/Contacts";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contacts",
+};
 
 export default async function ContactsPage() {
   return (
