@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export const CV_URL =
-  "https://www.canva.com/design/DAGaHvR1wns/DMFxm8CSmKTY0dsg3PlcOA/view?utm_content=DAGaHvR1wns&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0ba4a2834e";
+  "https://www.canva.com/design/DAGmJWORj-4/wik8CUrZ8TJbhmbQ4ubAaA/view?utm_content=DAGmJWORj-4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2feec78070";
 
 export const CAREER_START_DATE = "2024-05-01";
 

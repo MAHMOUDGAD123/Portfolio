@@ -21,12 +21,12 @@ const contact: ContactType[] = [
   {
     icon: faEnvelope,
     title: "Email",
-    info: "hooda.gad333@gmail.com",
+    info: "magad11197@gmail.com",
   },
   {
     icon: faLocationDot,
     title: "Address",
-    info: "Al Mansurah - Egypt",
+    info: "Cairo - Egypt",
   },
 ];
 
@@ -46,9 +46,9 @@ export default async function Contacts() {
               {title}
             </span>
 
-            <div className="flex gap-[10px] text-[15px] font-bold max-_sm:flex-col max-_sm:gap-[5px] max-_usm:text-[13px]">
+            <address className="flex gap-[10px] text-[15px] font-bold max-_sm:flex-col max-_sm:gap-[5px] max-_usm:text-[13px]">
               {info}
-            </div>
+            </address>
           </div>
         </div>
       ))}
