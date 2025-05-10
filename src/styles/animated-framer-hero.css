@@ -87,14 +87,14 @@
     border-radius: inherit;
     position: relative;
     contain: paint;
-    mix-blend-mode: hard-light;
     z-index: 3;
 
     & > img {
+      mask-image: linear-gradient(to bottom, #fff 10%, transparent 50%);
       width: 100%;
       position: absolute;
-      top: 35px;
-      scale: 1.3;
+      translate: 0 15%;
+      scale: 1.4;
     }
   }
 }
