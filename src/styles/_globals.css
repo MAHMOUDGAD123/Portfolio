@@ -50,18 +50,14 @@ h1 {
   border: none;
   outline: none;
   box-sizing: border-box;
-  scrollbar-width: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -moz-tap-highlight-color: rgba(0, 0, 0, 0);
-  /* outline: 1px solid #fff; */
+  scrollbar-color: var(--prm-col-1) var(--prm-col-4);
+  scrollbar-width: thin;
 
   &::selection {
     background-color: var(--prm-col-1);
     color: #fff;
-  }
-
-  &::-webkit-scrollbar {
-    display: none;
   }
 }
 
@@ -245,3 +241,14 @@ textarea {
   }
 }
 /* Reduce Motion Media End */
+
+/* remove scrollbar on small screens */
+@media (width <= 750px) {
+  html {
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
