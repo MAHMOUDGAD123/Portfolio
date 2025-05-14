@@ -102,13 +102,6 @@ textarea {
 }
 
 /* view transition start */
-.slideLeft {
-  view-transition-name: slideLeft;
-}
-.slideRight {
-  view-transition-name: slideRight;
-}
-
 @supports (view-transition-name: slideRight) {
   @media (prefers-reduced-motion: no-preference) {
     ::view-transition-group(*) {

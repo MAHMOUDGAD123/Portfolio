@@ -21,10 +21,10 @@ export default function Projects() {
       if (!document.startViewTransition) {
         return callback();
       }
-      slideElement.current?.classList.add(direction);
+      slideElement.current!.style.viewTransitionName = direction;
       const viewTransition = document.startViewTransition(callback);
       await viewTransition.finished;
-      slideElement.current?.classList.remove(direction);
+      slideElement.current!.style.viewTransitionName = "none";
     },
     [],
   );
