@@ -3,7 +3,7 @@ import TitleOnHover from "@/components/decoration/TitleOnHover";
 import { PROJECTS } from "@/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleChevronLeft,
@@ -14,45 +14,70 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState<number>(0);
+  const slideElement = useRef<HTMLDivElement | null>(null);
+
+  const changeSlideHandler = useCallback(
+    async (callback: () => void, direction: "slideLeft" | "slideRight") => {
+      if (!document.startViewTransition) {
+        return callback();
+      }
+      slideElement.current?.classList.add(direction);
+      const viewTransition = document.startViewTransition(callback);
+      await viewTransition.finished;
+      slideElement.current?.classList.remove(direction);
+    },
+    [],
+  );
 
   return (
-    <div className="relative flex w-full flex-col gap-[20px]">
+    <div className="relative flex w-full select-none flex-col gap-[20px]">
       <div className="absolute right-0 top-[-35px] flex animate-fadeIn gap-[25px] self-center text-[35px] text-dodgerblue *:cursor-pointer *:opacity-50 *:transition-opacity hover:*:opacity-100 motion-reduce:animate-none max-_xl:static max-_xl:right-auto max-_xl:mb-[30px]">
         <FontAwesomeIcon
           icon={faCircleChevronLeft}
           onClick={() =>
-            setActiveProject((c) => (c > 0 ? c - 1 : PROJECTS.length - 1))
+            changeSlideHandler(
+              () =>
+                setActiveProject((c) => (c > 0 ? c - 1 : PROJECTS.length - 1)),
+              "slideLeft",
+            )
           }
         />
 
         <FontAwesomeIcon
           icon={faCircleChevronRight}
           onClick={() =>
-            setActiveProject((c) => (c < PROJECTS.length - 1 ? c + 1 : 0))
+            changeSlideHandler(
+              () =>
+                setActiveProject((c) => (c < PROJECTS.length - 1 ? c + 1 : 0)),
+              "slideRight",
+            )
           }
         />
       </div>
 
-      <div className="flex h-full w-full items-center justify-center gap-[50px] *:flex-1 max-_xl:flex-col max-_xl:text-center">
+      <div
+        ref={slideElement}
+        className="flex h-full w-full items-center justify-center gap-[50px] *:flex-1 max-_xl:flex-col max-_xl:text-center"
+      >
         <div className="flex min-h-[410px] animate-settleLeft flex-col motion-reduce:animate-none max-_xl:*:place-content-center">
-          <span
+          <h2
             className="font-saira text-[70px] text-transparent"
             style={{
               WebkitTextStroke: "2.5px var(--prm-col-1)",
             }}
           >
             {PROJECTS[activeProject].count}
-          </span>
+          </h2>
 
-          <span className="mb-[10px] text-[45px] font-extrabold text-dodgerblue max-_sm:text-[35px]">
+          <h3 className="mb-[10px] text-[45px] font-extrabold text-dodgerblue max-_sm:text-[35px]">
             {PROJECTS[activeProject].title}
-          </span>
+          </h3>
 
           <p className="text-[1rem] text-SecTextCol">
             {PROJECTS[activeProject].description}
           </p>
 
-          <div className="my-[20px] flex select-none flex-wrap gap-[13px]">
+          <div className="my-[20px] flex flex-wrap gap-[13px]">
             {PROJECTS[activeProject].techs.map((tech, i) => (
               <span
                 key={i}
