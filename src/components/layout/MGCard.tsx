@@ -41,6 +41,7 @@ export default function MGCard() {
             href={CV_URL}
             target="_blank"
             className="custom-button flex items-center gap-3 text-[1.25rem]"
+            aria-label="Open my resume at canva.com"
           >
             <span>OPEN CV</span>
             <FontAwesomeIcon icon={faFile} />
@@ -51,6 +52,7 @@ export default function MGCard() {
               href="https://github.com/MAHMOUDGAD123"
               target="_blank"
               className="custom-button"
+              aria-label="Open my GitHub page"
             >
               <FontAwesomeIcon icon={faGithub} />
             </a>
@@ -61,7 +63,11 @@ export default function MGCard() {
             >
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
-            <Link href="/contact" className="custom-button">
+            <Link
+              href="/contact"
+              className="custom-button"
+              aria-label="Go to my contact route"
+            >
               <FontAwesomeIcon icon={faWhatsapp} />
             </Link>
           </div>

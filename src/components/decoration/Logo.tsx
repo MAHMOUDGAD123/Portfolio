@@ -4,6 +4,7 @@ import "@/styles/logo.css";
 export default function Logo() {
   return (
     <Link
+      aria-label="This is the page logo it will navigate you to the home page"
       href="/"
       className="mr-auto flex h-fit cursor-pointer content-center items-center self-center text-[23px] font-extrabold focus-visible:text-dodgerblue max-_md:text-[21px]"
     >

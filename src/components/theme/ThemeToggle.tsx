@@ -21,7 +21,11 @@ export default function ThemeToggle() {
             title={key.toUpperCase()}
             className="cursor-pointer opacity-50 transition-opacity focus-within:opacity-100 hover:opacity-100 motion-reduce:transition-none"
           >
-            <button className={style} onClick={() => setTheme(key)}>
+            <button
+              className={style}
+              onClick={() => setTheme(key)}
+              aria-label={`Click this button to change the theme to ${theme}`}
+            >
               <FontAwesomeIcon icon={icon} />
             </button>
           </TitleOnHover>
