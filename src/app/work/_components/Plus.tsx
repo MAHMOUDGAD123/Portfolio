@@ -13,14 +13,20 @@ export default function Plus() {
         <div
           key={i}
           className="relative flex flex-col rounded-xl bg-dodgerblue_30 backdrop-blur-lg *:hover:visible *:hover:opacity-100"
+          style={{
+            contentVisibility: "auto",
+            containIntrinsicSize: "auto 100px 200px",
+          }}
         >
           <Image
             src={img}
             alt={title}
             width={200}
-            height={200}
-            loading="eager"
-            priority
+            height={(200 * 16) / 9}
+            loading="lazy"
+            style={{
+              aspectRatio: "16/9",
+            }}
           />
 
           <div className="absolute flex h-full w-full flex-col items-center justify-center gap-[15px] rounded-[inherit] bg-itembg opacity-0 duration-500 [transition-property:opacity,visibility] [visibility:hidden]">

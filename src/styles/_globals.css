@@ -308,10 +308,10 @@ textarea {
 /* remove scrollbar on small screens */
 @media (width <= 750px) {
   html {
-    scrollbar-width: none;
+    /* scrollbar-width: none;
 
     &::-webkit-scrollbar {
       display: none;
-    }
+    } */
   }
 }
