@@ -13,10 +13,6 @@ export default function Plus() {
         <div
           key={i}
           className="relative flex flex-col rounded-xl bg-dodgerblue_30 backdrop-blur-lg *:hover:visible *:hover:opacity-100"
-          style={{
-            contentVisibility: "auto",
-            containIntrinsicSize: "auto 100px 200px",
-          }}
         >
           <Image
             src={img}
