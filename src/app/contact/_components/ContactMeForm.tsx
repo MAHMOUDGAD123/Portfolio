@@ -125,7 +125,7 @@ export default function ContactMeForm() {
           ref={SubmitBtnEle}
           type="submit"
           onClick={onSubmitBtnClick}
-          className="mb-[7px] mt-[17px] w-[100px] self-center text-center"
+          className="custom-button mb-[7px] mt-[17px] w-[100px] self-center text-center"
         >
           Send
         </button>

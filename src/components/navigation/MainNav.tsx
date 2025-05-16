@@ -15,7 +15,11 @@ const MainNav = () => {
           pathName.slice(1).split("/").includes(name.toLowerCase());
 
         return (
-          <Link className={isActive ? "active" : ""} key={name} href={href}>
+          <Link
+            className={isActive ? "active navigable" : "navigable"}
+            key={name}
+            href={href}
+          >
             {name}
           </Link>
         );

@@ -37,24 +37,31 @@ export default function MGCard() {
         </p>
 
         <div className="mt-[40px] flex items-center justify-start gap-6 max-_xl:flex-col">
-          <a href={CV_URL} target="_blank">
-            <button className="flex items-center gap-3 max-_usm:text-[13px]">
-              <span>OPEN CV</span>
-              <FontAwesomeIcon icon={faFile} />
-            </button>
+          <a
+            href={CV_URL}
+            target="_blank"
+            className="custom-button flex items-center gap-3 text-[1.25rem]"
+          >
+            <span>OPEN CV</span>
+            <FontAwesomeIcon icon={faFile} />
           </a>
 
           <div className="inline-flex items-center gap-3 text-[20px] text-[var(--prm-col-1)] *:flex *:aspect-square *:w-[40px] *:items-center *:justify-center *:rounded-full *:border-solid *:border-[var(--prm-col-1)] *:transition-colors *:duration-[var(--trans-dur)] hover:*:bg-[var(--prm-col-1)] hover:*:text-[var(--drk-txt-col)] motion-reduce:*:transition-none">
-            <a href="https://github.com/MAHMOUDGAD123" target="_blank">
+            <a
+              href="https://github.com/MAHMOUDGAD123"
+              target="_blank"
+              className="custom-button"
+            >
               <FontAwesomeIcon icon={faGithub} />
             </a>
             <a
               href="https://www.linkedin.com/in/mahmoud-gad-674729198/"
               target="_blank"
+              className="custom-button"
             >
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
-            <Link href="/contact:~:text=(+20)%20,1097890670">
+            <Link href="/contact" className="custom-button">
               <FontAwesomeIcon icon={faWhatsapp} />
             </Link>
           </div>

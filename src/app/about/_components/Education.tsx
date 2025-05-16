@@ -18,11 +18,8 @@ export default function Education() {
   return (
     <div className="flex w-full flex-col gap-[25px] whitespace-nowrap">
       {education.map(({ fromTo, title, at }, i) => (
-        <FadeInAnimationProvider key={title} delayMs={i * 500}>
-          <div
-            key={i}
-            className="flex flex-col gap-[10px] rounded-[10px] bg-itembg p-[15px] font-bold max-_xl:items-center"
-          >
+        <FadeInAnimationProvider key={i} delayMs={i * 500}>
+          <div className="flex flex-col gap-[10px] rounded-[10px] bg-itembg p-[15px] font-bold max-_xl:items-center">
             <span className="text-[15px] text-dodgerblue max-_sm:text-[13px]">
               {fromTo}
             </span>

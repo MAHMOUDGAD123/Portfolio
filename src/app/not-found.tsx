@@ -18,7 +18,7 @@ export default function NotFound() {
         <span className="text-SecTextCol">{pathName}</span>
       </div>
       <button
-        className="mb-[50px] flex items-center gap-[7px]"
+        className="custom-button mb-[50px] flex items-center gap-[7px]"
         onClick={() => {
           router.replace("/");
         }}

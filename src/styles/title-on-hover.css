@@ -8,8 +8,8 @@
     bottom: -47px;
   }
 
-  &:hover::before {
-    display: unset;
+  &:is(:hover, :focus-within)::before {
+    display: block;
     animation: fade-in 500ms forwards;
   }
 

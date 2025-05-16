@@ -13,12 +13,12 @@ export default function SideNav() {
 
   return (
     <div className="z-[100] overscroll-contain font-extrabold text-current _xl:hidden">
-      <div
-        className="cursor-pointer text-[20px] text-[--sec-col-1] transition-colors duration-[--trans-dur] hover:text-[--prm-col-1] motion-reduce:transition-none"
+      <button
+        className="cursor-pointer text-[20px] text-[--sec-col-1] transition-colors duration-[--trans-dur] hover:text-dodgerblue focus-visible:text-dodgerblue motion-reduce:transition-none"
         onClick={() => setShow((current) => !current)}
       >
         <FontAwesomeIcon icon={faBarsStaggered} />
-      </div>
+      </button>
 
       {show && (
         <div
@@ -41,7 +41,7 @@ export default function SideNav() {
 
               return (
                 <Link
-                  className={`${isActive ? "active" : ""} rounded-full px-[20px] py-[5px] hover:bg-[light-dark(#ddd,#222)] [&.active]:bg-[light-dark(#ccc,#333)!important] [&.active]:text-[var(--prm-col-1)!important]`}
+                  className={`${isActive ? "active navigable" : "navigable"} rounded-full px-[20px] py-[5px] hover:bg-[light-dark(#ddd,#222)] [&.active]:bg-[light-dark(#ccc,#333)!important] [&.active]:text-[var(--prm-col-1)!important]`}
                   key={name}
                   href={href}
                   onClick={() => {

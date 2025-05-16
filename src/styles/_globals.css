@@ -76,8 +76,8 @@ img {
   border-radius: inherit;
 }
 
-button {
-  font-size: 17px;
+.custom-button {
+  appearance: none;
   border-radius: 100px;
   padding: 7px 15px;
   border: 3px solid var(--prm-col-1);
@@ -94,6 +94,12 @@ button {
   }
 }
 
+.navigable {
+  &:focus-visible {
+    outline: 3px solid dodgerblue;
+  }
+}
+
 input,
 textarea {
   transition: box-shadow var(--trans-dur);
@@ -106,10 +112,6 @@ textarea {
     animation: outline-blink 5s ease-in-out infinite;
   }
 }
-
-/* ::target-text {
-  background-color: dodgerblue;
-} */
 
 /* Animaiton Keyframes Start */
 @keyframes outline-blink {

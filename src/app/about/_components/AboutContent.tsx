@@ -9,7 +9,7 @@ interface Props {
 
 export default function AboutContent({ sectionsArray }: Props) {
   const pathName = usePathname();
-  const routeMap = new Map<string, [string, number, string]>([
+  const routeMap = new Map<string, [string, 0 | 1 | 2, string]>([
     ["/about", ["My Journey", 0, "Crafting sleek|web interfaces."]],
     [
       "/about/education",
@@ -55,7 +55,7 @@ export default function AboutContent({ sectionsArray }: Props) {
             {title}
           </h2>
 
-          {sectionsArray[componentIndex]}
+          <div key={componentIndex}>{sectionsArray[componentIndex]}</div>
         </div>
       </div>
     </>

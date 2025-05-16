@@ -15,6 +15,7 @@ export default function RootErrorBoundary({ error }: TYPES.ErrorBoundaryProps) {
       </div>
 
       <button
+        className="custom-button"
         onClick={() => {
           router.replace("/");
         }}

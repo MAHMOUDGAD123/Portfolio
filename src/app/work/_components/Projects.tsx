@@ -3,7 +3,7 @@ import TitleOnHover from "@/components/decoration/TitleOnHover";
 import { PROJECTS } from "@/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleChevronLeft,
@@ -11,9 +11,12 @@ import {
   faLink,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { _Storage } from "@/utils/Storage";
 import "./_styles/projects-styles.css";
 
 export default function Projects() {
+  const sessionStorageSlideKey = "_mg_slide_offset_";
+  const [initialLoad, setInitialLoad] = useState(true);
   const [activeProject, setActiveProject] = useState<number>(0);
   const slideElement = useRef<HTMLDivElement | null>(null);
 
@@ -33,11 +36,26 @@ export default function Projects() {
     [],
   );
 
+  useEffect(() => {
+    setActiveProject((initialValue) => {
+      return (
+        (_Storage.read(sessionStorageSlideKey, "sessionStorage") as number) ??
+        initialValue
+      );
+    });
+    setInitialLoad(false);
+  }, []);
+
+  useEffect(() => {
+    if (initialLoad) return;
+    _Storage.save(sessionStorageSlideKey, activeProject, "sessionStorage");
+    /* eslint-disable-next-line */
+  }, [activeProject]);
+
   return (
     <div className="relative flex w-full select-none flex-col gap-[20px]">
-      <div className="absolute right-0 top-[-35px] flex animate-fadeIn gap-[25px] self-center text-[35px] text-dodgerblue *:cursor-pointer *:opacity-50 *:transition-opacity hover:*:opacity-100 motion-reduce:animate-none max-_xl:static max-_xl:right-auto max-_xl:mb-[30px]">
-        <FontAwesomeIcon
-          icon={faCircleChevronLeft}
+      <div className="absolute right-0 top-[-35px] flex animate-fadeIn gap-[25px] self-center text-[2.5rem] text-dodgerblue *:cursor-pointer *:opacity-50 *:transition-opacity hover:*:opacity-100 focus-visible:*:opacity-100 motion-reduce:animate-none max-_xl:static max-_xl:right-auto max-_xl:mb-[30px]">
+        <button
           onClick={() =>
             changeSlideHandler(
               () =>
@@ -45,10 +63,11 @@ export default function Projects() {
               "slideLeft",
             )
           }
-        />
+        >
+          <FontAwesomeIcon icon={faCircleChevronLeft} />
+        </button>
 
-        <FontAwesomeIcon
-          icon={faCircleChevronRight}
+        <button
           onClick={() =>
             changeSlideHandler(
               () =>
@@ -56,7 +75,9 @@ export default function Projects() {
               "slideRight",
             )
           }
-        />
+        >
+          <FontAwesomeIcon icon={faCircleChevronRight} />
+        </button>
       </div>
 
       <div
