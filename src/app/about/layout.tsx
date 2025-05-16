@@ -22,7 +22,7 @@ export default async function AboutLayout({
   return (
     <PageHolder>
       {children}
-      <AboutContent journey={journey} skills={skills} education={education} />
+      <AboutContent sectionsArray={[journey, education, skills]} />
     </PageHolder>
   );
 }

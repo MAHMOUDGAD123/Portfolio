@@ -1,20 +1,9 @@
 import "@/styles/animated-framer-hero.css";
-import Image from "next/image";
 
 export default function AnimatedFramerHero() {
   return (
-    <div className="animated-framer-text">
-      <div className="img-box">
-        <Image
-          src="/imgs/ME.webp"
-          width={500}
-          height={500}
-          alt="ME"
-          draggable="false"
-          priority
-          loading="eager"
-        />
-      </div>
+    <div className="animated-framer-text" data-text="MG">
+      <div className="img-box"></div>
     </div>
   );
 }

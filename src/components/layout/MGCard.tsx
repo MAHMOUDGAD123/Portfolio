@@ -43,6 +43,7 @@ export default function MGCard() {
               <FontAwesomeIcon icon={faFile} />
             </button>
           </a>
+
           <div className="inline-flex items-center gap-3 text-[20px] text-[var(--prm-col-1)] *:flex *:aspect-square *:w-[40px] *:items-center *:justify-center *:rounded-full *:border-solid *:border-[var(--prm-col-1)] *:transition-colors *:duration-[var(--trans-dur)] hover:*:bg-[var(--prm-col-1)] hover:*:text-[var(--drk-txt-col)] motion-reduce:*:transition-none">
             <a href="https://github.com/MAHMOUDGAD123" target="_blank">
               <FontAwesomeIcon icon={faGithub} />
@@ -53,7 +54,7 @@ export default function MGCard() {
             >
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
-            <Link href="/contact">
+            <Link href="/contact:~:text=(+20)%20,1097890670">
               <FontAwesomeIcon icon={faWhatsapp} />
             </Link>
           </div>

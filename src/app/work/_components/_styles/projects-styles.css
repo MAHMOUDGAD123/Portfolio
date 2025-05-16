@@ -1,0 +1,22 @@
+@supports (view-transition-name: blabla) {
+  ::view-transition-group(*) {
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
+    --distance: 100px;
+  }
+
+  ::view-transition-new(slideLeft) {
+    animation-name: show-slide-from-left;
+  }
+  ::view-transition-old(slideLeft) {
+    animation-name: hide-slide-to-right;
+  }
+
+  ::view-transition-new(slideRight) {
+    animation-name: show-slide-from-right;
+  }
+  ::view-transition-old(slideRight) {
+    animation-name: hide-slide-to-left;
+  }
+}

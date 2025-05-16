@@ -29,7 +29,6 @@
   background-color: var(--bg-col);
   color: var(--text-col);
 
-  view-transition-name: none;
   scroll-behavior: smooth;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -37,6 +36,13 @@
   -moz-osx-font-smoothing: grayscale;
   color-scheme: light dark;
   font-family: var(--font-roboto-mono), monospace;
+}
+
+/* stop transition on root if supports */
+@supports (view-transition-name: blabla) {
+  :root {
+    view-transition-name: none;
+  }
 }
 
 h1 {
@@ -101,32 +107,9 @@ textarea {
   }
 }
 
-/* view transition start */
-@supports (view-transition-name: slideRight) {
-  @media (prefers-reduced-motion: no-preference) {
-    ::view-transition-group(*) {
-      animation-duration: 0.25s;
-      animation-fill-mode: both;
-      animation-timing-function: ease-in;
-      --distance: 100px;
-    }
-
-    ::view-transition-new(slideLeft) {
-      animation-name: show-slide-from-left;
-    }
-    ::view-transition-old(slideLeft) {
-      animation-name: hide-slide-to-right;
-    }
-
-    ::view-transition-new(slideRight) {
-      animation-name: show-slide-from-right;
-    }
-    ::view-transition-old(slideRight) {
-      animation-name: hide-slide-to-left;
-    }
-  }
-}
-/* view transition end */
+/* ::target-text {
+  background-color: dodgerblue;
+} */
 
 /* Animaiton Keyframes Start */
 @keyframes outline-blink {

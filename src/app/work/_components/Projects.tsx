@@ -11,6 +11,7 @@ import {
   faLink,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import "./_styles/projects-styles.css";
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState<number>(0);
@@ -18,7 +19,10 @@ export default function Projects() {
 
   const changeSlideHandler = useCallback(
     async (callback: () => void, direction: "slideLeft" | "slideRight") => {
-      if (!document.startViewTransition) {
+      if (
+        !document.startViewTransition ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
         return callback();
       }
       slideElement.current!.style.viewTransitionName = direction;

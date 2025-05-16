@@ -138,6 +138,87 @@ export const PROJECTS: Project[] = [
   },
 ];
 
+interface CardInfo {
+  title: string;
+  img: string;
+  liveLink: string;
+  githubLink: string;
+  techs: string[];
+}
+
+export const PLUS_Work: CardInfo[] = [
+  {
+    title: "React Calculator",
+    img: "/imgs/plus/react-calc.webp",
+    liveLink: "https://mg-react-calc.netlify.app/",
+    githubLink: "https://github.com/MAHMOUDGAD123/React-Calculator",
+    techs: ["ReactJS"],
+  },
+  {
+    title: "FLIP Layout",
+    img: "/imgs/plus/flip-layout.webp",
+    liveLink: "https://mahmoudgad123.github.io/flip-layout/",
+    githubLink: "https://github.com/MAHMOUDGAD123/flip-layout",
+    techs: ["HTML", "CSS", "JS"],
+  },
+  {
+    title: "CSS Theme Demo",
+    img: "/imgs/plus/css-only-theme.webp",
+    liveLink: "https://mahmoudgad123.github.io/CSS-Only-Light-Dark/",
+    githubLink: "https://github.com/MAHMOUDGAD123/CSS-Only-Light-Dark",
+    techs: ["HTML", "CSS"],
+  },
+  {
+    title: "Tic Tac Toe",
+    img: "/imgs/plus/tic-tac-toe.webp",
+    liveLink: "https://mahmoudgad123.github.io/Tic-Tac-Toe/",
+    githubLink: "https://github.com/MAHMOUDGAD123/Tic-Tac-Toe",
+    techs: ["HTML", "CSS", "JS"],
+  },
+  {
+    title: "CSS Battle",
+    img: "/imgs/plus/css-cool-shapes.webp",
+    liveLink: "https://mahmoudgad123.github.io/Cool-CSS-Shapes/",
+    githubLink: "https://github.com/MAHMOUDGAD123/Cool-CSS-Shapes",
+    techs: ["HTML", "CSS"],
+  },
+  {
+    title: "CSS Easing Demo",
+    img: "/imgs/plus/css-easing-functions.webp",
+    liveLink: "https://mahmoudgad123.github.io/CSS-Easing-Function-Demo/",
+    githubLink: "https://github.com/MAHMOUDGAD123/CSS-Easing-Function-Demo",
+    techs: ["HTML", "CSS", "JS"],
+  },
+  {
+    title: "CSS Transform Demo",
+    img: "/imgs/plus/css-transform.webp",
+    liveLink: "https://mahmoudgad123.github.io/CSS-Transform-Demo/",
+    githubLink: "https://github.com/MAHMOUDGAD123/CSS-Transform-Demo",
+    techs: ["HTML", "CSS", "JS"],
+  },
+  {
+    title: "CSS Animation Demo",
+    img: "/imgs/plus/css-animation.webp",
+    liveLink: "https://mahmoudgad123.github.io/CSS-Animation-Demo/",
+    githubLink: "https://github.com/MAHMOUDGAD123/CSS-Animation-Demo",
+    techs: ["HTML", "CSS", "JS"],
+  },
+  {
+    title: "Wall Clock",
+    img: "/imgs/plus/wall-clock.webp",
+    liveLink: "https://mahmoudgad123.github.io/JS-Clock/",
+    githubLink: "https://github.com/MAHMOUDGAD123/JS-Clock",
+    techs: ["HTML", "CSS", "JS"],
+  },
+  {
+    title: "CSS Tracker Ball Demo",
+    img: "/imgs/plus/css-tracker-ball-demo.webp",
+    liveLink: "https://mahmoudgad123.github.io/CSS-Tracker-Ball-Demo/",
+    githubLink: "https://github.com/MAHMOUDGAD123/CSS-Tracker-Ball-Demo",
+    techs: ["HTML", "CSS", "JS"],
+  },
+];
+
 // theme related constants
 export const THEME_KEY = "__MG_theme__" as const;
 export type ThemeType = "light" | "system" | "dark";
