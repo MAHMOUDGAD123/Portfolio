@@ -12,7 +12,7 @@ import {
 export const CV_URL =
   "https://www.canva.com/design/DAGmJWORj-4/wik8CUrZ8TJbhmbQ4ubAaA/view?utm_content=DAGmJWORj-4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2feec78070";
 
-export const CAREER_START_DATE = "2024-05-01";
+export const CAREER_START_DATE = "2024-09-01";
 
 export interface LinksType {
   href: string;
