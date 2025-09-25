@@ -59,11 +59,9 @@
     z-index: 3;
 
     & > img {
-      mask-image: linear-gradient(to bottom, #fff 10%, transparent 50%);
+      mask-image: radial-gradient(#fff 25%, transparent);
       width: 100%;
       position: absolute;
-      translate: 0 15%;
-      scale: 1.4;
     }
   }
 }
