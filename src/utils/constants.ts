@@ -9,8 +9,11 @@ import {
   faSun,
 } from "@fortawesome/free-solid-svg-icons";
 
+// export const CV_URL =
+//   "https://www.canva.com/design/DAGmJWORj-4/wik8CUrZ8TJbhmbQ4ubAaA/view?utm_content=DAGmJWORj-4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2feec78070";
+
 export const CV_URL =
-  "https://www.canva.com/design/DAGmJWORj-4/wik8CUrZ8TJbhmbQ4ubAaA/view?utm_content=DAGmJWORj-4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2feec78070";
+  "https://www.canva.com/design/DAGaHvR1wns/DMFxm8CSmKTY0dsg3PlcOA/view?utm_content=DAGaHvR1wns&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0ba4a2834e";
 
 export const CAREER_START_DATE = "2025-01-01";
 
@@ -146,7 +149,7 @@ export const PROJECTS: Project[] = [
     liveLink: "https://vue-js-playground.vercel.app/",
     linkReplace: false,
     githubLink: "https://github.com/MAHMOUDGAD123/VueJS-Playground",
-    techs: ["VueJs", "vue-router", "pinia", 'vuex', '...'],
+    techs: ["VueJs", "vue-router", "pinia", "vuex", "..."],
   },
 ];
 
