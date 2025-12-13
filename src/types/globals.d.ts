@@ -4,3 +4,6 @@ declare namespace TYPES {
     reset: () => void;
   }
 }
+
+// fix ts error with *.css imports
+declare module '*.css'

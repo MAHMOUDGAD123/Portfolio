@@ -12,7 +12,7 @@ import {
 export const CV_URL =
   "https://www.canva.com/design/DAGmJWORj-4/wik8CUrZ8TJbhmbQ4ubAaA/view?utm_content=DAGmJWORj-4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2feec78070";
 
-export const CAREER_START_DATE = "2024-09-01";
+export const CAREER_START_DATE = "2025-01-01";
 
 export interface LinksType {
   href: string;
@@ -45,13 +45,15 @@ export const NAV_LINKS: LinksType[] = [
 export const SKILLS: string[] = [
   "HTML5",
   "CSS3",
+  "TailwindCSS",
   "Javascript",
   "Typescript",
-  "NodeJs",
+  "VueJs",
+  "NuxtJs",
   "ReactJs",
   "NextJs",
-  "ReactRouter",
-  "TailwindCSS",
+  "NodeJs",
+  // "ReactRouter",
   "Vite",
 ];
 
@@ -135,6 +137,16 @@ export const PROJECTS: Project[] = [
     linkReplace: false,
     githubLink: "https://github.com/MAHMOUDGAD123/spa-app",
     techs: ["HTML5", "CSS3", "JavaScript", "TypeScript", "Vite"],
+  },
+  {
+    count: "06",
+    title: "Vue-Playground",
+    description:
+      "A simple Vue.js app for testing components, tools, and libraries.",
+    liveLink: "https://vue-js-playground.vercel.app/",
+    linkReplace: false,
+    githubLink: "https://github.com/MAHMOUDGAD123/VueJS-Playground",
+    techs: ["VueJs", "vue-router", "pinia", 'vuex', '...'],
   },
 ];
 
