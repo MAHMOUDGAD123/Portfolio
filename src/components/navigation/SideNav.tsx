@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { NAV_LINKS } from "@/utils/constants";
-import ThemeToggle from "../theme/ThemeToggle";
+// import ThemeToggle from "../theme/ThemeToggle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 
@@ -56,7 +56,7 @@ export default function SideNav() {
               );
             })}
 
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
           </nav>
         </div>
       )}

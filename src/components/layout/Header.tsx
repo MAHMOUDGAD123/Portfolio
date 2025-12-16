@@ -1,7 +1,7 @@
 import MainNav from "@/components/navigation/MainNav";
 import SideNav from "../navigation/SideNav";
 import Logo from "../decoration/Logo";
-import ThemeToggle from "../theme/ThemeToggle";
+// import ThemeToggle from "../theme/ThemeToggle";
 import ThemeProvider from "../theme/ThemeProvider";
 
 export default function Header() {
@@ -10,9 +10,9 @@ export default function Header() {
       <Logo />
       <MainNav />
       <ThemeProvider>
-        <div className="hidden _xl:block">
+        {/* <div className="hidden _xl:block">
           <ThemeToggle />
-        </div>
+        </div> */}
         <SideNav />
       </ThemeProvider>
     </header>

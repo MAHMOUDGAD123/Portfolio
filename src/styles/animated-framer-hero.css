@@ -59,7 +59,7 @@
     z-index: 3;
 
     & > img {
-      mask-image: radial-gradient(#fff 25%, transparent);
+      /* mask-image: radial-gradient(#ffffff 25%, transparent); */
       width: 100%;
       position: absolute;
     }
